@@ -26,7 +26,7 @@ It can happen if you use apps like Yasnac. Currently, I have not encountered thi
 
 
 # support
-if you need support contact http://t.me/furdiburd
+if you need support contact http://t.me/furdiburd or join to the new group https://t.me/playfixnext
 
 # Demonstration
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5b8376-aa3e-4be1-91d7-5f003ac72499
