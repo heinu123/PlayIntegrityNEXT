@@ -8,7 +8,7 @@ If you wanna help me
 https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/Release
 
 # Why this fork?
-It downloads the fp automatically.
+It downloads the fingerprint automatically.
 
 # Instructions
 
