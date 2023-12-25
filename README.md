@@ -24,7 +24,6 @@ When the FP will be banned, you will only need to open the app and then check fo
 Sometimes, you may need to double-check for Play Integrity Attestation if the new PIF.json was just downloaded.
 It can happen if you use apps like Yasnac. Currently, I have not encountered this bug using the Google Play developer check.
 
-
 # support
 if you need support contact http://t.me/furdiburd or join to the new group https://t.me/playfixnext
 
@@ -45,3 +44,5 @@ https://github.com/daboynb/PlayIntegrityNEXT/blob/main/Gms.tsk.xml
 https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm
 
 https://play.google.com/store/apps/details?id=net.dinglisch.android.appfactory
+
+# Ingnore the new folders, I'm making some tests
