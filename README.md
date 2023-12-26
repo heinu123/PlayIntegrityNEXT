@@ -25,7 +25,10 @@ Sometimes, you may need to double-check for Play Integrity Attestation if the ne
 It can happen if you use apps like Yasnac. Currently, I have not encountered this bug using the Google Play developer check.
 
 # support
-if you need support contact http://t.me/furdiburd or join to the new group https://t.me/playfixnext
+Telegram :
+    - CHANNEL https://t.me/PifNEXT
+    - PM http://t.me/furdiburd 
+    - GROUP https://t.me/playfixnext
 
 # Demonstration
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5b8376-aa3e-4be1-91d7-5f003ac72499
