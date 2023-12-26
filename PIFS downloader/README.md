@@ -11,6 +11,12 @@ It downloads random fingerprints from https://github.com/TheFreeman193/PIFS.
 
 If you like the Russian roulette :)
 
+
+
+https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/614e3599-076c-4386-a791-43ecb2d3d283
+
+
+
 # Requirements
 Magisk, busybox and termux
 
