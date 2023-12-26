@@ -15,7 +15,7 @@ If you like the Russian roulette :)
 
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/614e3599-076c-4386-a791-43ecb2d3d283
 
-
+IF YOU REBOOT THE PHONE THE PIF.JSON WILL DISAPPEAR, BACKUP THE FILE IF IT PASSES DEVICE INTEGRITY!
 
 # Requirements
 Magisk, busybox and termux
