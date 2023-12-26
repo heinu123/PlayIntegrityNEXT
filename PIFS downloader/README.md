@@ -9,6 +9,10 @@ Download random fingerprints from https://github.com/TheFreeman193/PIFS.
 
 If you like the Russian roulette :)
 
-# Requirements
+Click on it and wait until it says "done".
 
+# Requirements
 Busybox and termux
+
+# Issues 
+Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).

@@ -18,4 +18,4 @@ if you need support contact http://t.me/furdiburd or join to the new group https
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/3a8fb626-bd31-48e3-89d8-c2cec6c67eab
 
 # Issues 
-not working with play integrity fix 14.8 and 14.9
+Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
