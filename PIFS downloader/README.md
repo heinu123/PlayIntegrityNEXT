@@ -15,4 +15,4 @@ If you like the Russian roulette :)
 Magisk, busybox and termux
 
 # Issues 
-Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
+Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9 for some users).
