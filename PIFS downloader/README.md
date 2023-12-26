@@ -12,7 +12,7 @@ It downloads random fingerprints from https://github.com/TheFreeman193/PIFS.
 If you like the Russian roulette :)
 
 # Requirements
-Busybox and termux
+Magisk, busybox and termux
 
 # Issues 
 Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
