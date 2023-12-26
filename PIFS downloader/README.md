@@ -3,13 +3,13 @@ If you wanna help me
 <a href="https://www.buymeacoffee.com/daboynb" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
 # Instructions
+Open the app and wait until it says "done", it will delete the old pif.json and download a new one.
+
 It's a beta.
 
-Download random fingerprints from https://github.com/TheFreeman193/PIFS. 
+It downloads random fingerprints from https://github.com/TheFreeman193/PIFS. 
 
 If you like the Russian roulette :)
-
-Click on it and wait until it says "done".
 
 # Requirements
 Busybox and termux
