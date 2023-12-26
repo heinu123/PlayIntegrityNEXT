@@ -15,9 +15,11 @@ https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Gms%20apk%20to%20use%20wi
 # support
 Telegram :
 
-    - CHANNEL https://t.me/PifNEXT
-    - PM http://t.me/furdiburd 
-    - GROUP https://t.me/playfixnext
+CHANNEL https://t.me/PifNEXT
+
+PM http://t.me/furdiburd 
+
+GROUP https://t.me/playfixnext
 
 # Other stuff
 Auto fp downloader for Play integrity fix by chiteroman from https://github.com/TheFreeman193/PIFS, If you like the Russian roulette :) , not all fps are working.
