@@ -8,3 +8,7 @@ It's a beta.
 Download random fingerprints from https://github.com/TheFreeman193/PIFS. 
 
 If you like the Russian roulette :)
+
+# Requirements
+
+Busybox and termux
