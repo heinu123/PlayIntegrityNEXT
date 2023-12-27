@@ -10,7 +10,7 @@ Follow this steps :
 
 - Flash playcurl.zip and reboot
 
-- Disable (NOT REMOVE) the playcurl module
+- The playcurl module should stay disabled, do not enable it!
 
 - Flash the playintegrityfix by chiteroman v 14.6 (newest version are not working at the moment for some users) and reboot
 
