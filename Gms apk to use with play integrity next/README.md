@@ -20,3 +20,12 @@ It can happen if you use apps like Yasnac. Currently, I have not encountered thi
 
 # Demonstration
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5b8376-aa3e-4be1-91d7-5f003ac72499
+
+# Support
+Telegram :
+
+CHANNEL https://t.me/PifNEXT
+
+PM http://t.me/furdiburd 
+
+GROUP https://t.me/playfixnext

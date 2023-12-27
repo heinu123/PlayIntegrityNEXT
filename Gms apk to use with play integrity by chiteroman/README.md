@@ -21,11 +21,17 @@ https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.goog
 
 - Enjoy, you'll have always the updated fp with the original module, if the fp gets banned you will only need to launch the apk
 
-# support
-if you need support contact http://t.me/furdiburd or join to the new group https://t.me/playfixnext
-
 # Demonstration
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/3a8fb626-bd31-48e3-89d8-c2cec6c67eab
 
 # Issues 
 Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
+
+# Support
+Telegram :
+
+CHANNEL https://t.me/PifNEXT
+
+PM http://t.me/furdiburd 
+
+GROUP https://t.me/playfixnext
