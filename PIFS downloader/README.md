@@ -11,8 +11,14 @@ It downloads random fingerprints from https://github.com/TheFreeman193/PIFS.
 
 If you like the Russian roulette :)
 
+
+
+https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/614e3599-076c-4386-a791-43ecb2d3d283
+
+IF YOU REBOOT THE PHONE THE PIF.JSON WILL DISAPPEAR, BACKUP THE FILE IF IT PASSES DEVICE INTEGRITY!
+
 # Requirements
-Busybox and termux
+Magisk, busybox and termux
 
 # Issues 
-Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
+Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9 for some users).
