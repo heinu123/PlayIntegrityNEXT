@@ -9,7 +9,7 @@ It downloads the fingerprint automatically.
 1) Download the zip
 2) Download the apk
 3) Install the apk and grant root permissions ( if you are unable to install the apk use 
-https://play.google.com/store/apps/details?id=com.aefyr.sai )
+https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller)
 4) Flash the zip and reboot
 
 When the FP will be banned, you will only need to open the app and then check for Play Integrity Attestation. The module will download the new PIF.json. 
