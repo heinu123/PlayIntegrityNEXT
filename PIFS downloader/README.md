@@ -2,10 +2,6 @@ If you wanna help me
 
 <a href="https://www.buymeacoffee.com/daboynb" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-# MD5
-
-- 4ceb8c5e8cb3c1ee7b67f57f66af8ff3 PIFS_downloader.apk
-
 # Instructions
 Open the app and wait until it says "done", it will delete the old pif.json and download a new one.
 

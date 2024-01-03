@@ -4,12 +4,7 @@ https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/Release
 # Why this fork?
 It downloads the fingerprint automatically.
 
-# MD5 
-
-- b4326fc794ef8a6494c8b6c497edfc9d gms.apk
-
 # Instructions
-
 1) Download the zip
 2) Download the apk
 3) Install the apk and grant root permissions ( if you are unable to install the apk use 
