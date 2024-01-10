@@ -14,7 +14,7 @@ Follow this steps :
 
 - Flash the playintegrityfix by chiteroman v 14.6 (newest version are not working at the moment for some users) and reboot
 
-- Go to /data/adb/playintegrityfix and delete pif.json (if present)
+- Go to /data/adb/modules/playintegrityfix and delete pif.json (if present)
 
 - Install the apk and grant root permissions ( if you are unable to install the apk use 
 https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller)
