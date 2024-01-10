@@ -6,7 +6,7 @@ If you wanna help me
 
 # Auto fp downloader for Play integrity fix by chiteroman
 
-[Here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Gms%20apk%20to%20use%20with%20play%20integrity%20by%20chiteroman)
+[Here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman)
 
 # Play integrity fix NEXT module
 [Here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Gms%20apk%20to%20use%20with%20play%20integrity%20next)
