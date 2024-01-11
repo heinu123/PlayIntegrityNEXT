@@ -12,7 +12,7 @@ Follow this steps :
 
 - The playcurl module should stay disabled, do not enable it!
 
-- Flash the playintegrityfix by chiteroman v 14.6 (newest version are not working at the moment for some users) and reboot
+- Flash the playintegrityfix by chiteroman v15.1
 
 - Go to /data/adb/modules/playintegrityfix and delete pif.json (if present)
 
@@ -23,9 +23,6 @@ https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.goog
 
 # Demonstration
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/3a8fb626-bd31-48e3-89d8-c2cec6c67eab
-
-# Issues 
-Use with play integrity fix v14.6 only (not working with play integrity fix 14.8 and 14.9).
 
 # Support
 Telegram :
