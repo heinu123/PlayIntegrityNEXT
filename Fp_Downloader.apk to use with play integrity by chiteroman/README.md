@@ -32,3 +32,7 @@ CHANNEL https://t.me/PifNEXT
 PM http://t.me/furdiburd 
 
 GROUP https://t.me/playfixnext
+
+# Issues
+
+If you don't see the notification check the app permissions.
