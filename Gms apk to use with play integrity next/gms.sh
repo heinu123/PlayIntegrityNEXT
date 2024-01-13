@@ -1,9 +1,11 @@
+touch /storage/emulated/0/gms_termux.log
+
 su -c '{
   if [ -f /data/adb/pif.json ]; then
     rm "/data/adb/pif.json"
-    echo "File /data/adb/pif.json removed."
+    echo "File /data/adb/pif.json removed." >> /storage/emulated/0/gms_termux.log
   else
-    echo "Continue" > /storage/emulated/0/gms_termux.log
+    echo "Continue" >> /storage/emulated/0/gms_termux.log
   fi
 }'
 
@@ -27,4 +29,4 @@ su -c '{
 
 cat /storage/emulated/0/gms_termux.log
 
-rm /storage/emulated/0/gms_termux.log
+# rm /storage/emulated/0/gms_termux.log
