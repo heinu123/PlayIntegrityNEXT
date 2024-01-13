@@ -1,4 +1,12 @@
-su -c '[ -f /data/adb/pif.json ] && rm "/data/adb/pif.json" || echo "Continue"'
+su -c '{
+  if [ -f /data/adb/pif.json ]; then
+    rm "/data/adb/pif.json"
+    echo "File /data/adb/pif.json removed."
+  else
+    echo "Continue"
+  fi
+}'
+
 su -c '{
   if pgrep -f com.google.android.gms > /dev/null; then
     pkill -f com.google.android.gms
