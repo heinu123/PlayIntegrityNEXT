@@ -25,6 +25,6 @@ su -c '{
   fi
 }'
 
-cat >> /storage/emulated/0/gms_termux.log
+cat /storage/emulated/0/gms_termux.log
 
-rm >> /storage/emulated/0/gms_termux.log
+rm /storage/emulated/0/gms_termux.log
