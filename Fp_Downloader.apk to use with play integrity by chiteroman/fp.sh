@@ -13,7 +13,6 @@ su
 
 {
   if [ -f /data/adb/modules/playcurl/curl ]; then
-    rm "/data/adb/modules/playcurl/curl"
     echo "Playcurl is installed" >> /storage/emulated/0/fp.log
   else
     echo "Playcurl is not installed" >> /storage/emulated/0/fp.log
