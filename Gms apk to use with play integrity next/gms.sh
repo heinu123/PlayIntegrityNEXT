@@ -25,5 +25,5 @@ su -c '{
   fi
 }'
 
-su -c "pgrep -f com.google.android.gms.unstable"    
-su -c "pgrep -f com.google.android.gms"
+su -c "pgrep -f com.google.android.gms.unstable &$ echo unstable"    
+su -c "pgrep -f com.google.android.gms echo gms"
