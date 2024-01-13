@@ -8,7 +8,7 @@ su -c '{
 }'
 
 su -c '{
-  if pgrep -f com.google.android.gms; then
+  if pgrep -f com.google.android.gms > /dev/null; then
     pkill -f com.google.android.gms
     echo "com.google.android.gms process killed."
   else
@@ -17,10 +17,13 @@ su -c '{
 }'
 
 su -c '{
-  if pgrep -f com.google.android.gms.unstable; then
+  if pgrep -f com.google.android.gms.unstable > /dev/null; then
     pkill -f com.google.android.gms.unstable
     echo "com.google.android.gms.unstable process killed."
   else
     echo "com.google.android.gms.unstable process is not running, no need to kill."
   fi
 }'
+
+su -c "pgrep -f com.google.android.gms.unstable"    
+su -c "pgrep -f com.google.android.gms"
