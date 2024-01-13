@@ -24,14 +24,14 @@ su
 {
   if pgrep -f com.google.android.gms.unstable > /dev/null; then
     pkill -f com.google.android.gms.unstable
-    echo "com.google.android.gms.unstable process killed."
+    echo "com.google.android.gms.unstable process killed." >> /storage/emulated/0/fp.log
   else
-    echo "com.google.android.gms.unstable process is not running, no need to kill."
+    echo "com.google.android.gms.unstable process is not running, no need to kill." >> /storage/emulated/0/fp.log
   fi
 }
 
 if [ -e /data/adb/pif.json ]; then 
-    echo "Pif.json downloaded succesfully"; 
+    echo "Pif.json downloaded succesfully"; >> /storage/emulated/0/fp.log
 else 
-    echo "Pif.json not present, something went wrong."
+    echo "Pif.json not present, something went wrong." >> /storage/emulated/0/fp.log
 fi
