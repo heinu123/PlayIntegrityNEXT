@@ -35,7 +35,3 @@ if [ -e /data/adb/pif.json ]; then
 else 
     echo "Pif.json not present, something went wrong."
 fi
-
-sleep 03
-
-exit
