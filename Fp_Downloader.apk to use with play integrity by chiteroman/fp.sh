@@ -1,12 +1,22 @@
 #su -c "cd /storage/emulated/0 && /data/adb/modules/playcurl/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
 su 
+
 {
   if [ -f /data/adb/pif.json ]; then
     rm "/data/adb/pif.json"
     echo "File /data/adb/pif.json removed." >> /storage/emulated/0/fp.log
   else
     echo "Continue" >> /storage/emulated/0/fp.log
+  fi
+}
+
+{
+  if [ -f /data/adb/modules/playcurl/curl ]; then
+    rm "/data/adb/modules/playcurl/curl"
+    echo "Playcurl is installed" >> /storage/emulated/0/fp.log
+  else
+    echo "Playcurl is not installed" >> /storage/emulated/0/fp.log
   fi
 }
 
