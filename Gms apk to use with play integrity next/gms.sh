@@ -1,7 +1,9 @@
 if [ -f "/storage/emulated/0/gms_termux.log" ]; then
   rm "/storage/emulated/0/gms_termux.log" 
-  
+
 touch /storage/emulated/0/gms_termux.log
+
+su
 
 su -c '{
   if [ -f /data/adb/pif.json ]; then
