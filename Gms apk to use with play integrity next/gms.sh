@@ -25,3 +25,4 @@ su
     echo "com.google.android.gms.unstable process is not running, no need to kill."
   fi
 }
+exit
