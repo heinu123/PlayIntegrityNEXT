@@ -4,20 +4,20 @@ su
 {
   if [ -f /data/adb/pif.json ]; then
     rm "/data/adb/pif.json"
-    echo "File /data/adb/pif.json removed."
+    echo "File /data/adb/pif.json removed." >> /storage/emulated/0/fp.log
   else
-    echo "Continue"
+    echo "Continue" >> /storage/emulated/0/fp.log
   fi
 }
 
-/data/adb/modules/playcurl/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json
+/data/adb/modules/playcurl/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json >> /storage/emulated/0/fp.log
 
 {
   if pgrep -f com.google.android.gms > /dev/null; then
     pkill -f com.google.android.gms
-    echo "com.google.android.gms process killed."
+    echo "com.google.android.gms process killed." >> /storage/emulated/0/fp.log
   else
-    echo "com.google.android.gms process is not running."
+    echo "com.google.android.gms process is not running." >> /storage/emulated/0/fp.log
   fi
 }
 
