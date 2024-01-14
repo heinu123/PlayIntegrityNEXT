@@ -7,7 +7,7 @@ su
     rm "/data/adb/pif.json"
     echo "File /data/adb/pif.json removed." >> /storage/emulated/0/fp.log
   else
-    echo "Continue" >> /storage/emulated/0/fp.log
+    echo "File /data/adb/pif.json not present, no need to delete" >> /storage/emulated/0/fp.log
   fi
 }
 
