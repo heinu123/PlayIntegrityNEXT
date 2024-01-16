@@ -22,7 +22,10 @@ Sometimes, you may need to double-check for Play Integrity Attestation if the ne
 It can happen if you use apps like Yasnac. Currently, I have not encountered this bug using the Google Play developer check.
 
 # Demonstration
-https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5b8376-aa3e-4be1-91d7-5f003ac72499
+
+
+https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5999ad-43ca-4f2d-ac36-1a8685c196f1
+
 
 # Support
 Telegram :
