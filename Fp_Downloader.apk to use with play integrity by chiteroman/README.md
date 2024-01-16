@@ -4,17 +4,18 @@ If you wanna help me
 
 # Instructions
 
-Follow this steps :
+1 Download playcurl.zip (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/playcurl.zip) and fp-downloader.apk (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/Fp_Downloader.apk) 
 
-- Remove playintegrityfix next and reboot (if installed)
+2 Download the chiteroman's module (https://github.com/chiteroman/PlayIntegrityFix/releases/latest)
 
-- Flash playcurl.zip and reboot
+3 Flash the playcurl and the chiteroman's module  > reboot.
+[Note: playcurl will be disabled by default, don't enable it]
 
-- The playcurl module should stay disabled, do not enable it!
+4 Install fp_downloader.apk, launch the app and grant the necessary permissions.
 
-- Flash the playintegrityfix by chiteroman v15.1
+5 Use the SPIC app to verify Play integrity or the play store checker.
 
-- Go to /data/adb/modules/playintegrityfix and delete pif.json (if present)
+When the FP will be banned, you will only need to open the fp_downloader app and then check for Play Integrity Attestation, the app will download the new PIF.json on /data/adb/pif.json.
 
 - Install the apk and grant root permissions ( if you are unable to install the apk use 
 https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller)

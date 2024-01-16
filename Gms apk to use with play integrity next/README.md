@@ -5,13 +5,17 @@ https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/Release
 It downloads the fingerprint automatically.
 
 # Instructions
-1) Download the zip
-2) Download the apk
-3) Install the apk and grant root permissions ( if you are unable to install the apk use 
-https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller)
-4) Flash the zip and reboot
 
-When the FP will be banned, you will only need to open the app and then check for Play Integrity Attestation. The module will download the new PIF.json. 
+1 Download PlayIntegrityFix_NEXT.zip (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/Release/PlayIntegrityFix_NEXT.zip) and gms.apk (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/Release/Gms.apk)
+
+2 Flash the PlayIntegrityFix_NEXT.zip and reboot
+
+3 Install the gms.apk and grant the necessary permissions, check if notifications are turned on or you won't be able to read them.
+( if you are unable to install the apk use this (https://play.google.com/store/apps/details?id=com.aefyr.sai)  or this (https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller) )
+
+4 Use the SPIC app to verify Play integrity or the play store checker.
+
+When the FP will be banned, you will only need to open the gms app and then check for Play Integrity Attestation, the module will download the new PIF.json on /data/adb/pif.json.
 
 # ATTENTION
 Sometimes, you may need to double-check for Play Integrity Attestation if the new PIF.json was just downloaded.
