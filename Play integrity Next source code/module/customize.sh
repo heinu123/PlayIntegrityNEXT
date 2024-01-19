@@ -24,6 +24,9 @@ if [ -d "/product/app/XiaomiEUInject" ]; then
 	[ -d "$directory" ] || mkdir -p "$directory"
 
 	touch "$directory/.replace"
+
+	ui_print "- Product XiaomiEUInject app removed."
+
 		
 fi
 
@@ -34,6 +37,8 @@ if [ -d "/system/app/XiaomiEUInject" ]; then
 	[ -d "$directory" ] || mkdir -p "$directory"
 
 	touch "$directory/.replace"
+
+	ui_print "- System XiaomiEUInject app removed."
 		
 fi
 
@@ -45,7 +50,7 @@ if [ -d "/system/app/XiaomiEUInject-Stub" ]; then
 
 	touch "$directory/.replace"
 		
-	ui_print "- XiaomiEUInject app removed."
+	ui_print "- System XiaomiEUInject-stub app removed."
 fi
 
 # Remove EliteRoms app
@@ -79,7 +84,7 @@ if [ -f "/data/adb/pif.json" ]; then
 	ui_print "- Backup pif.json"
 fi
 
-# Curl
+# curl
 
 mv -f $MODPATH/bin/$ABI/curl $MODPATH
 rm -rf $MODPATH/bin
