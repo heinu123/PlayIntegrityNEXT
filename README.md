@@ -5,10 +5,10 @@ If you wanna help me
 # Play integrity fix
 
 # Auto FP Downloader app to be used with the Official Play Integrity Fix (created by me, for the Chiteroman's module)
-[Here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman)
+[Instructions here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman)
 
 # Play integrity fix NEXT module (Play Integrity Fix fork)
-[Here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Gms%20apk%20to%20use%20with%20play%20integrity%20next)
+[Instructions here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Gms%20apk%20to%20use%20with%20play%20integrity%20next)
 
 # support
 Telegram :
