@@ -25,6 +25,26 @@ if [ -d "/product/app/XiaomiEUInject" ]; then
 
 	touch "$directory/.replace"
 		
+fi
+
+if [ -d "/system/app/XiaomiEUInject" ]; then
+	
+	directory="$MODPATH/system/app/XiaomiEUInject"
+
+	[ -d "$directory" ] || mkdir -p "$directory"
+
+	touch "$directory/.replace"
+		
+fi
+
+if [ -d "/system/app/XiaomiEUInject-Stub" ]; then
+	
+	directory="$MODPATH/system/app/XiaomiEUInject-Stub"
+
+	[ -d "$directory" ] || mkdir -p "$directory"
+
+	touch "$directory/.replace"
+		
 	ui_print "- XiaomiEUInject app removed."
 fi
 
@@ -52,12 +72,15 @@ if [ -d "/system/app/EliteDevelopmentModule" ]; then
 	ui_print "- EliteDevelopmentModule app removed."
 fi
 
+# Backup the old pif.json
+
 if [ -f "/data/adb/pif.json" ]; then
 	mv -f "/data/adb/pif.json" "/data/adb/pif.json.old"
 	ui_print "- Backup pif.json"
 fi
 
-# curl
+# Curl
+
 mv -f $MODPATH/bin/$ABI/curl $MODPATH
 rm -rf $MODPATH/bin
 set_perm $MODPATH/curl root root 777
