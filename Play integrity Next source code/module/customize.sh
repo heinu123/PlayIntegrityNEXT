@@ -26,8 +26,7 @@ if [ -d "/product/app/XiaomiEUInject" ]; then
 	touch "$directory/.replace"
 
 	ui_print "- Product XiaomiEUInject app removed."
-
-		
+	
 fi
 
 if [ -d "/system/app/XiaomiEUInject" ]; then
