@@ -1,4 +1,4 @@
-#su -c "cd /storage/emulated/0 && /data/adb/modules/playcurl/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
+#su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
 su 
 
@@ -12,14 +12,14 @@ su
 }
 
 {
-  if [ -f /data/adb/modules/playcurl/curl ]; then
+  if [ -f /system/bin/curl ]; then
     echo "Playcurl is installed" >> /storage/emulated/0/fp.log
   else
     echo "Playcurl is not installed" >> /storage/emulated/0/fp.log
   fi
 }
 
-/data/adb/modules/playcurl/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json >> /storage/emulated/0/fp.log
+/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json >> /storage/emulated/0/fp.log
 
 {
   if pgrep -f com.google.android.gms > /dev/null; then
