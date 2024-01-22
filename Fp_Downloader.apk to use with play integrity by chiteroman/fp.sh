@@ -1,6 +1,6 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
-cls
+clear
 echo
 echo "Deleting old pif.json"
 rm -f "/data/adb/pif.json" > /dev/null 
