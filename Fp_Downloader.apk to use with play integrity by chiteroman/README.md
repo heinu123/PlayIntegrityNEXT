@@ -9,7 +9,6 @@ If you wanna help me
 2 Download the chiteroman's module (https://github.com/chiteroman/PlayIntegrityFix/releases/latest)
 
 3 Flash the playcurl and the chiteroman's module  > reboot.
-[Note: playcurl will be disabled by default, don't enable it]
 
 4 Install fp_downloader.apk, launch the app and grant the necessary permissions.
 
