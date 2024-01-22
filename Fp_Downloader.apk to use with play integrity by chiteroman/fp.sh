@@ -1,46 +1,15 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
-su 
+rm -f "/data/adb/pif.json" > /dev/null 
 
-{
-  if [ -f /data/adb/pif.json ]; then
-    rm "/data/adb/pif.json"
-    echo "File /data/adb/pif.json removed." >> /storage/emulated/0/fp.log
-  else
-    echo "File /data/adb/pif.json not present, no need to delete" >> /storage/emulated/0/fp.log
-  fi
-}
+/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json
 
-{
-  if [ -f /system/bin/curl ]; then
-    echo "Playcurl is installed" >> /storage/emulated/0/fp.log
-  else
-    echo "Playcurl is not installed" >> /storage/emulated/0/fp.log
-  fi
-}
+pkill -f com.google.android.gms > /dev/null 
 
-/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json >> /storage/emulated/0/fp.log
-
-{
-  if pgrep -f com.google.android.gms > /dev/null; then
-    pkill -f com.google.android.gms
-    echo "com.google.android.gms process killed." >> /storage/emulated/0/fp.log
-  else
-    echo "com.google.android.gms process is not running." >> /storage/emulated/0/fp.log
-  fi
-}
-
-{
-  if pgrep -f com.google.android.gms.unstable > /dev/null; then
-    pkill -f com.google.android.gms.unstable
-    echo "com.google.android.gms.unstable process killed." >> /storage/emulated/0/fp.log
-  else
-    echo "com.google.android.gms.unstable process is not running, no need to kill." >> /storage/emulated/0/fp.log
-  fi
-}
+pkill -f com.google.android.gms.unstable > /dev/null 
 
 if [ -e /data/adb/pif.json ]; then 
-    echo "Pif.json downloaded succesfully"; >> /storage/emulated/0/fp.log
+    echo "Pif.json downloaded succesfully"
 else 
-    echo "Pif.json not present, something went wrong." >> /storage/emulated/0/fp.log
+    echo "Pif.json not present, something went wrong."
 fi
