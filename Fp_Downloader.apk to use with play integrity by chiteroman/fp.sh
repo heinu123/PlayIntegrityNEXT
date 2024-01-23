@@ -2,25 +2,25 @@
 
 clear
 echo
-echo "Deleting old pif.json"
+echo "[+] Deleting old pif.json"
 rm -f "/data/adb/pif.json" > /dev/null 
 echo
 
-echo "Downloading the pif.json"
+echo "[+] Downloading the pif.json"
 /system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json
 echo
 
-echo "Killing com.google.android.gms"
+echo "[+] Killing com.google.android.gms"
 pkill -f com.google.android.gms > /dev/null 
 echo
 
-echo "Killing com.google.android.gms.unstable"
+echo "[+] Killing com.google.android.gms.unstable"
 pkill -f com.google.android.gms.unstable > /dev/null 
 echo
 
 if [ -e /data/adb/pif.json ]; then 
-    echo "Pif.json downloaded succesfully"
+    echo "[+] Pif.json downloaded succesfully"
 else 
-    echo "Pif.json not present, something went wrong."
+    echo "[+] Pif.json not present, something went wrong."
 fi
 echo
