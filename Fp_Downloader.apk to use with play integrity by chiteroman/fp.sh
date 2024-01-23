@@ -1,31 +1,48 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
-clear
+## ANSI Colors thanks to termux-style
+RED="$(printf '\033[31m')"  GREEN="$(printf '\033[32m')"  ORANGE="$(printf '\033[33m')"  BLUE="$(printf '\033[34m')"
+MAGENTA="$(printf '\033[35m')"  CYAN="$(printf '\033[36m')"  WHITE="$(printf '\033[37m')" BLACK="$(printf '\033[30m')"
+REDBG="$(printf '\033[41m')"  GREENBG="$(printf '\033[42m')"  ORANGEBG="$(printf '\033[43m')"  BLUEBG="$(printf '\033[44m')"
+MAGENTABG="$(printf '\033[45m')"  CYANBG="$(printf '\033[46m')"  WHITEBG="$(printf '\033[47m')" BLACKBG="$(printf '\033[40m')"
+DEFAULT_FG="$(printf '\033[39m')"  DEFAULT_BG="$(printf '\033[49m')"
+
+## Banner
+banner () {
+    clear
+    echo -e "
+    ${GREEN}#########################################################
+    ${GREEN}# PIF NEXT https://github.com/daboynb/PlayIntegrityNEXT #
+    ${GREEN}#########################################################"
+
+}
+banner
+
 echo
-echo "[+] Deleting old pif.json"
+echo -e "${GREEN}[+] Deleting old pif.json"
 rm -f "/data/adb/pif.json" > /dev/null 
 echo
 
-echo "[+] Check if the miui eu inject module is present"
+echo -e "${GREEN}[+] Check if the miui eu inject module is present"
 pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject module is disabled. Please reboot to ensure that the modification takes effect." || true
 echo
 
-echo "[+] Downloading the pif.json"
+echo -e "${GREEN}[+] Downloading the pif.json"
 /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson > /dev/null 2>&1 || /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson
 echo
 
-echo "[+] Killing com.google.android.gms"
+echo -e "${GREEN}[+] Killing com.google.android.gms"
 pkill -f com.google.android.gms > /dev/null 
 echo
 
-echo "[+] Killing com.google.android.gms.unstable"
+echo -e "${GREEN}[+] Killing com.google.android.gms.unstable"
 pkill -f com.google.android.gms.unstable > /dev/null 
 echo
 
 if [ -e /data/adb/pif.json ]; then 
-    echo "[+] Pif.json downloaded succesfully"
+    echo -e "${GREEN}[+] Pif.json downloaded succesfully"
 else 
-    echo "[+] Pif.json not present, something went wrong."
+    echo -e "${GREEN}   +] Pif.json not present, something went wrong."
 fi
 
 rm "$0"
