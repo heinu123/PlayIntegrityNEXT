@@ -25,4 +25,3 @@ else
 fi
 echo
 
-rm "$0"
