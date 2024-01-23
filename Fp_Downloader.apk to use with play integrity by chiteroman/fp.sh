@@ -6,6 +6,10 @@ echo "[+] Deleting old pif.json"
 rm -f "/data/adb/pif.json" > /dev/null 
 echo
 
+echo "[+] Check if the miui eu inject module is present"
+pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject module is disabled. Please reboot to ensure that the modification takes effect." || true
+echo
+
 echo "[+] Downloading the pif.json"
 /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson > /dev/null 2>&1 || /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson
 echo
