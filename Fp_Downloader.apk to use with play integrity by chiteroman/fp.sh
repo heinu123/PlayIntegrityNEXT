@@ -7,7 +7,7 @@ rm -f "/data/adb/pif.json" > /dev/null
 echo
 
 echo "[+] Downloading the pif.json"
-/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json > /dev/null 2>&1 || /system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json
+/system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson > /dev/null 2>&1 || /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson
 echo
 
 echo "[+] Killing com.google.android.gms"

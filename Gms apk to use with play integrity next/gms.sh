@@ -2,14 +2,16 @@
 
 clear
 echo
-echo "Deleting old pif.json"
+echo "[+] Deleting old pif.json"
 rm -f "/data/adb/pif.json" > /dev/null 
 echo
 
-echo "Killing com.google.android.gms"
+echo "[+] Killing com.google.android.gms"
 pkill -f com.google.android.gms > /dev/null 
 echo
 
-echo "Killing com.google.android.gms.unstable"
+echo "[+] Killing com.google.android.gms.unstable"
 pkill -f com.google.android.gms.unstable > /dev/null 
 echo
+
+rm "$0"
