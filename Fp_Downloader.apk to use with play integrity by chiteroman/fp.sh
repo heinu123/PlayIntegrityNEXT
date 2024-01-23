@@ -24,3 +24,5 @@ else
     echo "[+] Pif.json not present, something went wrong."
 fi
 echo
+
+rm "$0"
