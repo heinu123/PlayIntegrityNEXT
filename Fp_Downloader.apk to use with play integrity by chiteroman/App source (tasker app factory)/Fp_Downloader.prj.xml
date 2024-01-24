@@ -1,8 +1,8 @@
-<TaskerData sr="" dvi="1" tv="6.1.32">
+<TaskerData sr="" dvi="1" tv="6.2.22">
 	<Project sr="proj0" ve="2">
 		<cdate>1703686504285</cdate>
 		<name>Fp Downloader</name>
-		<tids>8</tids>
+		<tids>7</tids>
 		<Kid sr="Kid">
 			<launchID>3</launchID>
 			<pkg>com.fp.downloader</pkg>
@@ -13,19 +13,19 @@
 			<nme>hl_aaa_ext_android</nme>
 		</Img>
 	</Project>
-	<Task sr="task8">
+	<Task sr="task7">
 		<cdate>1703107711913</cdate>
-		<edate>1704306647672</edate>
-		<id>8</id>
+		<edate>1706110987871</edate>
+		<id>7</id>
 		<nme>Fp Downloader</nme>
 		<pri>100</pri>
 		<Kid sr="Kid">
 			<eperm0>RECEIVE_BOOT_COMPLETED</eperm0>
-			<launchID>3</launchID>
+			<launchID>7</launchID>
 			<pkg>com.fp.downloader</pkg>
 			<vTarg>29</vTarg>
 			<vnme>1.0</vnme>
-			<vnum>11</vnum>
+			<vnum>14</vnum>
 		</Kid>
 		<Action sr="act0" ve="7">
 			<code>123</code>
@@ -41,7 +41,7 @@
 		</Action>
 		<Action sr="act1" ve="7">
 			<code>123</code>
-			<Str sr="arg0" ve="3">if [ -e /data/adb/modules/playcurl/curl ]; then echo "Playcurl is installed"; else echo "Playcurl is not installed"; fi</Str>
+			<Str sr="arg0" ve="3">if [ -e /system/bin/curl ]; then echo "Playcurl is installed"; else echo "Playcurl is not installed"; fi</Str>
 			<Int sr="arg1" val="0"/>
 			<Int sr="arg2" val="1"/>
 			<Str sr="arg3" ve="3">%Playcurl</Str>
@@ -52,7 +52,7 @@
 		</Action>
 		<Action sr="act2" ve="7">
 			<code>123</code>
-			<Str sr="arg0" ve="3">/data/adb/modules/playcurl/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json</Str>
+			<Str sr="arg0" ve="3">/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json</Str>
 			<Int sr="arg1" val="0"/>
 			<Int sr="arg2" val="1"/>
 			<Str sr="arg3" ve="3"/>
