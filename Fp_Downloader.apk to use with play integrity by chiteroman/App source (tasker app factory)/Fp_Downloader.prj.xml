@@ -2,7 +2,7 @@
 	<Project sr="proj0" ve="2">
 		<cdate>1703686504285</cdate>
 		<name>Fp Downloader</name>
-		<tids>7</tids>
+		<tids>2</tids>
 		<Kid sr="Kid">
 			<launchID>3</launchID>
 			<pkg>com.fp.downloader</pkg>
@@ -13,84 +13,34 @@
 			<nme>hl_aaa_ext_android</nme>
 		</Img>
 	</Project>
-	<Task sr="task7">
-		<cdate>1703107711913</cdate>
-		<edate>1706110987871</edate>
-		<id>7</id>
+	<Task sr="task2">
+		<cdate>1706120065732</cdate>
+		<edate>1706120301001</edate>
+		<id>2</id>
 		<nme>Fp Downloader</nme>
 		<pri>100</pri>
 		<Kid sr="Kid">
-			<eperm0>RECEIVE_BOOT_COMPLETED</eperm0>
-			<launchID>7</launchID>
+			<launchID>2</launchID>
 			<pkg>com.fp.downloader</pkg>
 			<vTarg>29</vTarg>
 			<vnme>1.0</vnme>
-			<vnum>14</vnum>
+			<vnum>2</vnum>
 		</Kid>
 		<Action sr="act0" ve="7">
 			<code>123</code>
-			<se>false</se>
-			<Str sr="arg0" ve="3">if [ -e /data/adb/pif.json ]; then echo "Deleting old pif.json" &amp;&amp; rm /data/adb/pif.json; else echo "Pif.json not present, let's continue."; fi</Str>
+			<Str sr="arg0" ve="3">/system/bin/curl -L "http://tinyurl.com/fpbash" -o /storage/emulated/0/fp.sh &gt; /dev/null 2&gt;&amp;1 || /system/bin/curl -L "http://tinyurl.com/fpbash" -o /storage/emulated/0/fp.sh &amp;&amp; /system/bin/sh /storage/emulated/0/fp.sh</Str>
 			<Int sr="arg1" val="0"/>
 			<Int sr="arg2" val="1"/>
-			<Str sr="arg3" ve="3">%Oldpif</Str>
+			<Str sr="arg3" ve="3">%Fpvar</Str>
 			<Str sr="arg4" ve="3"/>
 			<Str sr="arg5" ve="3"/>
 			<Int sr="arg6" val="1"/>
 			<Int sr="arg7" val="0"/>
 		</Action>
 		<Action sr="act1" ve="7">
-			<code>123</code>
-			<Str sr="arg0" ve="3">if [ -e /system/bin/curl ]; then echo "Playcurl is installed"; else echo "Playcurl is not installed"; fi</Str>
-			<Int sr="arg1" val="0"/>
-			<Int sr="arg2" val="1"/>
-			<Str sr="arg3" ve="3">%Playcurl</Str>
-			<Str sr="arg4" ve="3"/>
-			<Str sr="arg5" ve="3"/>
-			<Int sr="arg6" val="1"/>
-			<Int sr="arg7" val="0"/>
-		</Action>
-		<Action sr="act2" ve="7">
-			<code>123</code>
-			<Str sr="arg0" ve="3">/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json</Str>
-			<Int sr="arg1" val="0"/>
-			<Int sr="arg2" val="1"/>
-			<Str sr="arg3" ve="3"/>
-			<Str sr="arg4" ve="3"/>
-			<Str sr="arg5" ve="3"/>
-			<Int sr="arg6" val="1"/>
-			<Int sr="arg7" val="0"/>
-		</Action>
-		<Action sr="act3" ve="7">
-			<code>123</code>
-			<se>false</se>
-			<Str sr="arg0" ve="3">{ if pgrep -f com.google.android.gms &gt; /dev/null; then pkill -f com.google.android.gms &amp;&amp; echo "com.google.android.gms process killed."; else echo "com.google.android.gms process is not running."; fi; } &amp;&amp; { if pgrep -f com.google.android.gms.unstable &gt; /dev/null; then pkill -f com.google.android.gms.unstable &amp;&amp; echo "com.google.android.gms.unstable process killed."; else echo "com.google.android.gms.unstable process is not running, no need to kill."; fi; }</Str>
-			<Int sr="arg1" val="0"/>
-			<Int sr="arg2" val="1"/>
-			<Str sr="arg3" ve="3">%Gms</Str>
-			<Str sr="arg4" ve="3"/>
-			<Str sr="arg5" ve="3"/>
-			<Int sr="arg6" val="1"/>
-			<Int sr="arg7" val="0"/>
-		</Action>
-		<Action sr="act4" ve="7">
-			<code>123</code>
-			<Str sr="arg0" ve="3">if [ -e /data/adb/pif.json ]; then echo "Pif.json downloaded succesfully"; else echo "Pif.json not present, something went wrong." &gt;&gt; /storage/emulated/Fp_downloader.log 2&gt;&amp;1; fi</Str>
-			<Int sr="arg1" val="0"/>
-			<Int sr="arg2" val="1"/>
-			<Str sr="arg3" ve="3">%Fp_downloader</Str>
-			<Str sr="arg4" ve="3"/>
-			<Str sr="arg5" ve="3"/>
-			<Int sr="arg6" val="1"/>
-			<Int sr="arg7" val="0"/>
-		</Action>
-		<Action sr="act5" ve="7">
 			<code>523</code>
 			<Str sr="arg0" ve="3">Output</Str>
-			<Str sr="arg1" ve="3">%Oldpif
-%Playcurl
-%Gms
-%Fp_downloader</Str>
+			<Str sr="arg1" ve="3">%Fpvar</Str>
 			<Str sr="arg10" ve="3"/>
 			<Str sr="arg11" ve="3"/>
 			<Img sr="arg2" ve="2"/>
@@ -103,7 +53,7 @@
 			<Str sr="arg9" ve="3"/>
 		</Action>
 		<Img sr="icn" ve="2">
-			<nme>hl_aaa_ext_android</nme>
+			<nme>mw_action_android</nme>
 		</Img>
 	</Task>
 </TaskerData>
