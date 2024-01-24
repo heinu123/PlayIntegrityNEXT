@@ -56,6 +56,5 @@ fi
 
 # curl
 
-mv -f $MODPATH/bin/$ABI/curl $MODPATH
-rm -rf $MODPATH/bin
-set_perm $MODPATH/curl root root 777
+mv -f $MODPATH/system/bin/$ABI/curl $MODPATH/system/bin
+set_perm $MODPATH/system/bin/curl root root 777
