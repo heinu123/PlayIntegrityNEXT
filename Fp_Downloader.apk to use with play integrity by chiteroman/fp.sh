@@ -28,7 +28,7 @@ pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo -e "${GREEN}The miui
 echo
 
 echo -e "${GREEN}[+] Downloading the pif.json"
-/system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson > /dev/null 2>&1 || /system/bin/curl -o /data/adb/pif.json http://tinyurl.com/autojson
+/system/bin/curl -L http://tinyurl.com/autojson -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L http://tinyurl.com/autojson -o /data/adb/pif.json
 echo
 
 echo -e "${GREEN}[+] Killing com.google.android.gms"
