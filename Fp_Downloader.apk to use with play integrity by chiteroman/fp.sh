@@ -7,7 +7,7 @@ rm -f "/data/adb/pif.json" > /dev/null
 echo
 
 echo "[+] Check if the miui eu inject module is present"
-pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo -e "The miui eu inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 echo
 
 echo "[+] Downloading the pif.json"
