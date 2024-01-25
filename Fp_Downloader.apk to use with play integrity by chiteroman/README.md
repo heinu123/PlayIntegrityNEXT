@@ -4,28 +4,33 @@ If you wanna help me
 
 # Instructions
 
-1 Download playcurl.zip (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/playcurl.zip) and fp-downloader.apk (https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/Fp_Downloader.apk) 
+Instructions for Fp_downloader, for Play Integrity Fix by Chiteroman:
 
-2 Download the chiteroman's module (https://github.com/chiteroman/PlayIntegrityFix/releases/latest)
+• Download playcurl.zip
 
-3 Flash the playcurl and the chiteroman's module  > reboot.
+• Download the chiteroman's module (https://github.com/chiteroman/PlayIntegrityFix/releases/latest)
 
-4 Install fp_downloader.apk, launch the app and grant the necessary permissions.
+• Flash both modules and reboot
 
-5 Use the SPIC app to verify Play integrity or the play store checker.
+• Open the fp_downloader app and grant the necessary permissions, check if notifications are turned on or you won't be able to read them.
 
-When the FP will be banned, you will only need to open the fp_downloader app and then check for Play Integrity Attestation, the app will download the new PIF.json on /data/adb/pif.json.
+• Use the SPIC app to verify Play integrity or the play store checker.
 
-- Install the apk and grant root permissions ( if you are unable to install the apk use 
-https://play.google.com/store/apps/details?id=com.aefyr.sai or https://play.google.com/store/apps/details?id=com.alloc64.apkinstaller)
+When the FP will be banned, you will only need to open the fp_downloader app.
 
-- Enjoy, you'll have always the updated fp with the original module, if the fp gets banned you will only need to launch the apk
+BONUS
+
+If the fp_downloader is not working you can use :
+
+    - Open Termux
+    - Type "su"
+    - Type "fp"
+
+If you get the "syntax error" on termux or app use the Old legacy fp_downloader app.
 
 # Demonstration
 
-
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/a8387745-b935-4d26-b7cd-447cf0a68edf
-
 
 # Support
 Telegram :
