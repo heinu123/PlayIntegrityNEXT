@@ -22,7 +22,7 @@ If the fp_downloader is not working you can use :
     - Type "su"
     - Type "gms"
 
-If you get the "syntax error" on termux or app use the Old legacy gms app.
+If you get the "syntax error" on termux or app use the Old legacy gms app [here](https://github.com/daboynb/PlayIntegrityNEXT/blob/main/Gms%20apk%20to%20use%20with%20play%20integrity%20next/Gms_legacy.apk)
 
 # Demonstration
 
