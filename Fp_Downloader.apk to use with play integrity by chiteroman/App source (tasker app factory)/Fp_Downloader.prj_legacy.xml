@@ -41,7 +41,7 @@
 		</Action>
 		<Action sr="act1" ve="7">
 			<code>123</code>
-			<Str sr="arg0" ve="3">if [ -e /data/adb/modules/playcurl/curl ]; then echo "Playcurl is installed"; else echo "Playcurl is not installed"; fi</Str>
+			<Str sr="arg0" ve="3">if [ -e /system/bin/curl ]; then echo "Playcurl is installed"; else echo "Playcurl is not installed"; fi</Str>
 			<Int sr="arg1" val="0"/>
 			<Int sr="arg2" val="1"/>
 			<Str sr="arg3" ve="3">%Playcurl</Str>
@@ -52,7 +52,7 @@
 		</Action>
 		<Action sr="act2" ve="7">
 			<code>123</code>
-			<Str sr="arg0" ve="3">/data/adb/modules/playcurl/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json</Str>
+			<Str sr="arg0" ve="3">/system/bin/curl -o /data/adb/pif.json https://raw.githubusercontent.com/daboynb/autojson/main/pif.json</Str>
 			<Int sr="arg1" val="0"/>
 			<Int sr="arg2" val="1"/>
 			<Str sr="arg3" ve="3"/>
