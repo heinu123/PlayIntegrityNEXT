@@ -11,7 +11,7 @@ pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject 
 echo
 
 echo "[+] Downloading the pif.json"
-/system/bin/curl -L http://tinyurl.com/autojson -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L http://tinyurl.com/autojson -o /data/adb/pif.json
+/system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json
 echo
 
 echo "[+] Killing com.google.android.gms"
