@@ -37,9 +37,9 @@ pkill -f com.google.android.gms.unstable > /dev/null
 echo
 
 if [ -f /data/adb/pif.json ] || [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]; then
-    echo "[+] Pif.json or custom.pif.json downloaded successfully"
+    echo "[+] Pif.json downloaded successfully"
 else
-    echo "[+] Neither Pif.json nor custom.pif.json is present, something went wrong."
+    echo "[+] Pif.json is not present, something went wrong."
 fi
 
 rm "$0"
