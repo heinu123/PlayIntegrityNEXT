@@ -3,7 +3,15 @@
 
 echo
 echo "[+] Deleting old pif.json"
-rm -f "/data/adb/pif.json" > /dev/null 
+if [ -f /data/adb/pif.json ]
+then
+    rm -f "/data/adb/pif.json" > /dev/null 
+fi
+
+if [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]
+then
+    rm -f "/data/adb/modules/playintegrityfix/custom.pif.json" > /dev/null 
+fi
 echo
 
 echo "[+] Check if the miui eu inject module is present"
