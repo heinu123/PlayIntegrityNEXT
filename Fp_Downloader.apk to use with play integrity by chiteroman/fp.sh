@@ -36,10 +36,10 @@ echo "[+] Killing com.google.android.gms.unstable"
 pkill -f com.google.android.gms.unstable > /dev/null 
 echo
 
-if [ -e /data/adb/pif.json ] || [ -e /data/adb/modules/playintegrityfix/custom.pif.json ]; then
+if [ -f /data/adb/pif.json ] || [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]; then
     echo "[+] Pif.json or custom.pif.json downloaded successfully"
 else
     echo "[+] Neither Pif.json nor custom.pif.json is present, something went wrong."
-fi
+fiy
 
 rm "$0"
