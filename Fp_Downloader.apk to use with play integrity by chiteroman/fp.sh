@@ -40,6 +40,6 @@ if [ -f /data/adb/pif.json ] || [ -f /data/adb/modules/playintegrityfix/custom.p
     echo "[+] Pif.json or custom.pif.json downloaded successfully"
 else
     echo "[+] Neither Pif.json nor custom.pif.json is present, something went wrong."
-fiy
+fi
 
 rm "$0"
