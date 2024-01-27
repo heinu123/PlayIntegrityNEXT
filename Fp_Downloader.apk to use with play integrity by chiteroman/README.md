@@ -25,9 +25,7 @@ If the fp_downloader is not working you can use :
     - Open Termux
     - Type "su"
     - Type "fp"
-
-If you get the "syntax error" on termux or app use the Old legacy fp_downloader app [here](https://github.com/daboynb/PlayIntegrityNEXT/blob/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/Fp_Downloader_legacy.apk)
-
+    
 # Demonstration
 
 https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/a8387745-b935-4d26-b7cd-447cf0a68edf
