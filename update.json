@@ -1,6 +1,6 @@
 {
-    "version": "v4",
-    "versionCode": 400,
+    "version": "v5",
+    "versionCode": 500,
     "zipUrl": "https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/playcurl.zip",
     "changelog": "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/changelog.md"
 }
