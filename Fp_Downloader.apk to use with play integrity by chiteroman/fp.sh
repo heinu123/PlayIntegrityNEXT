@@ -22,7 +22,7 @@ echo
 
 if [ "$1" == "c" ]; then
     echo "Custom kernel"
-    echo "[+] Downloading the pif.json"
+    echo "[+] Downloading the pif_kernel.json"
     
     if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
         /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
