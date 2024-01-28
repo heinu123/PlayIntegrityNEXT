@@ -21,10 +21,10 @@ echo
 echo "[+] Downloading the pif.json"
 if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]  
 then
-    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
+    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
 
 else
-    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json
+    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/pif.json
 fi
 echo
 
