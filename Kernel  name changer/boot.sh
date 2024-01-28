@@ -7,6 +7,8 @@ sudo apt install lz4
 # Menu
 mainmenu() {
     echo -ne "
+
+- "Warning both strings should have the same number of characters!"
 1) Boot.img
 2) Kernel zip 
 0) Exit
@@ -19,9 +21,23 @@ Choose an option:  "
         eval boot_file="$boot_file"
         
         output_file="boot_modified.img"
-        
-        read -e -p "Word to remove (lineage for example) : " search_string
-        read -e -p "Word to replace (lineage for example) : " replace_string
+
+        while true; do
+            read -e -p "Word to remove: " search_string
+            read -e -p "Word to replace: " replace_string
+
+            search_length=$(echo -n "$search_string" | wc -c)
+            replace_length=$(echo -n "$replace_string" | wc -c)
+
+            if [ "$search_string" == "$replace_string" ]; then
+                echo "Error: Both strings are the same. Please enter different strings."
+            elif [ "$search_length" -ne "$replace_length" ]; then
+                echo "Error: Both strings should have the same number of characters!"
+            else
+                echo "Let's continue!"
+                break
+            fi
+        done
 
         if strings "$boot_file" | grep -q "$search_string"; then
             sed "s/$search_string/$replace_string/g" "$boot_file" > "$output_file"
@@ -43,8 +59,22 @@ Choose an option:  "
         cp out/Image.lz4 .
         rm out/Image.lz4
 
-        read -e -p "Word to remove (lineage for example) : " search_string
-        read -e -p "Word to replace (lineage for example) : " replace_string
+        while true; do
+            read -e -p "Word to remove: " search_string
+            read -e -p "Word to replace: " replace_string
+
+            search_length=$(echo -n "$search_string" | wc -c)
+            replace_length=$(echo -n "$replace_string" | wc -c)
+
+            if [ "$search_string" == "$replace_string" ]; then
+                echo "Error: Both strings are the same. Please enter different strings."
+            elif [ "$search_length" -ne "$replace_length" ]; then
+                echo "Error: Both strings should have the same number of characters!"
+            else
+                echo "Let's continue!"
+                break
+            fi
+        done
 
         if strings "Image.lz4" | grep -q "$search_string"; then
             lz4 -c -d Image.lz4 | sed "s/$search_string/$replace_string/g" | lz4 -c -l -12 --favor-decSpeed - > Image-patched.lz4 
