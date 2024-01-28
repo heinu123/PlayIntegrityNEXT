@@ -18,7 +18,7 @@ Choose an option:  "
         read -e -p "Drag & drop your boot.img : " boot_file
         eval boot_file="$boot_file"
         
-        output_file="$HOME/boot_modified.img"
+        output_file="boot_modified.img"
         
         read -e -p "Word to remove (lineage for example) : " search_string
         read -e -p "Word to replace (lineage for example) : " replace_string
