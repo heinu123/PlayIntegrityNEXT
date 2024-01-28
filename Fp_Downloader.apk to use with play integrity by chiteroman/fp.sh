@@ -20,10 +20,13 @@ pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject 
 pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 echo
 
-if [ "$1" == "c" ]; then
+echo "Do you want to spoof the kernel? (y/n)"
+read -r answer
+
+if [ "$answer" == "y" ]; then
     echo "Custom kernel"
     echo "[+] Downloading the pif_kernel.json"
-    
+
     if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
         /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
     else
