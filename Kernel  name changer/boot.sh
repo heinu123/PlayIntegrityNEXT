@@ -45,7 +45,7 @@ Choose an option:  "
 
         # Replace the words
         if strings "$boot_file" | grep -q "$search_string"; then
-            sed "s/$search_string/$replace_string/g" "$boot_file" > "$output_file"
+            perl -pe "print if s/$search_string/$replace_string/g" "$boot_file" > "$output_file"
             echo "The process has been completed."
             echo "The final modified file has been saved as: $output_file"
         else
