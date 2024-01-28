@@ -36,7 +36,7 @@ Choose an option:  "
         read -e -p "Drag & drop your kernel zip  : " zip_kernel 
         eval zip_kernel="$zip_kernel"
 
-        cp "$zip_kernel" .
+        cp "$zip_kernel" . > /dev/null 2>&1
 
         unzip $zip_kernel -d out
 
