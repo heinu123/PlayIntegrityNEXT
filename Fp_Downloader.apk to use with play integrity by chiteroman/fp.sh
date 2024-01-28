@@ -2,6 +2,11 @@
 
 #!/bin/bash
 
+if [ -z "$1" ]
+  then
+    echo "No argument supplied"
+fi
+
 echo
 echo "[+] Deleting old pif.json"
 if [ -f /data/adb/pif.json ]
