@@ -28,6 +28,17 @@ if [ -d "/product/app/XiaomiEUInject" ]; then
     ui_print "- XiaomiEUInject app removed."
 fi
 
+if [ -d "/product/app/XiaomiEUInject-Stub" ]; then
+    
+    directory="$MODPATH/product/app/XiaomiEUInject-Stub"
+    
+    [ -d "$directory" ] || mkdir -p "$directory"
+    
+    touch "$directory/.replace"
+    
+    ui_print "- XiaomiEUInject-Stub app removed."
+fi
+
 su -c "pm disable eu.xiaomi.module.inject" > /dev/null
 
 # Remove EliteRoms app
@@ -56,5 +67,6 @@ fi
 
 # curl
 
+set_perm $MODPATH/system/bin/gms root root 0777
 mv -f $MODPATH/system/bin/$ABI/curl $MODPATH/system/bin
 set_perm $MODPATH/system/bin/curl root root 777
