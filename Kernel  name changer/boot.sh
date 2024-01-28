@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # Dependencies
-sudo apt install zip
-sudo apt install lz4
+sudo dpkg -l | grep -qw zip || sudo apt-get install zip -y
+sudo dpkg -l | grep -qw lz4 || sudo apt-get install lz4 -y
 
 # Menu
 mainmenu() {
