@@ -9,8 +9,8 @@ mainmenu() {
     echo -ne "
 
 - "Warning both strings should have the same number of characters!"
-1) Boot.img
-2) Kernel zip 
+1) Boot.img 
+2) Kernel zip (sultan kernel)
 0) Exit
 Choose an option:  "
     read -r ans
