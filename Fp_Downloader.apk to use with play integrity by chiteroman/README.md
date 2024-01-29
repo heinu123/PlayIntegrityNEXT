@@ -12,19 +12,19 @@ Instructions for Fp_downloader, for Play Integrity Fix by Chiteroman:
 
 • Flash both modules and reboot
 
-• Open the fp_downloader app and grant the necessary permissions, check if notifications are turned on or you won't be able to read them.
+• Open Termux
+
+• Type "su"
+
+• Type "fp"
+
+• Answer the question about kernel spoofing
 
 • Use the SPIC app to verify Play integrity or the play store checker.
 
-When the FP will be banned, you will only need to open the fp_downloader app.
+• Open the fp_downloader app and grant the necessary permissions, check if notifications are turned on or you won't be able to read them. 
 
-BONUS
-
-If the fp_downloader is not working you can use :
-
-    - Open Termux
-    - Type "su"
-    - Type "fp"
+When the FP will be banned, you will only need to open the fp_downloader app or use the termux command.
     
 # Demonstration
 
