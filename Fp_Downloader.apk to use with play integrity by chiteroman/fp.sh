@@ -35,7 +35,6 @@ pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject modul
 echo
 
 if [ -f /storage/emulated/0/custom_yes.txt ]; then
-    echo "Custom kernel"
     echo "[+] Downloading the pif_kernel.json"
 
     if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
