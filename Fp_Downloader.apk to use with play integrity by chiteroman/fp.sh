@@ -57,4 +57,8 @@ else
     echo "[+] Pif.json is not present, something went wrong."
 fi
 
+echo "[+] Kernel:"
+uname -r
+echo
+
 rm "$0"
