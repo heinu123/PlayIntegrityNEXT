@@ -1,20 +1,5 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
-
 #!/bin/bash
-echo
-if [ -f /storage/emulated/0/custom_yes.txt ] || [ -f /storage/emulated/0/custom_no.txt ]; then
-    echo "[+] Let's start!"
-else
-    echo "This is the first configuration, run the fp command inside termux then you will be able to use the app!"
-    echo "Do you want to spoof the kernel too? (y/n)"
-    read -r answer
-
-    if [ "$answer" == "y" ]; then
-        touch /storage/emulated/0/custom_yes.txt 
-    else
-        touch /storage/emulated/0/custom_no.txt 
-    fi
-fi
 
 echo
 echo "[+] Deleting old pif.json"
@@ -34,7 +19,9 @@ pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject 
 pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 echo
 
-if [ -f /storage/emulated/0/custom_yes.txt ]; then
+kernel_var="no"
+
+if [ "$kernel_var" == "yes" ]; then
     echo "[+] Downloading the pif_kernel.json"
 
     if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then

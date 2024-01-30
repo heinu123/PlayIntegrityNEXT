@@ -14,17 +14,7 @@ It downloads the fingerprint automatically.
 
 • Use the SPIC app to verify Play integrity or the play store checker.
 
-When the FP will be banned, you will only need to open the gms app and then check for Play Integrity Attestation, the module will download the new PIF.json on /data/adb/pif.json.
-
-If the fp_downloader is not working you can use :
-
-    - Open Termux
-    - Type "su"
-    - Type "gms"
-
-# Demonstration
-
-https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/2f5999ad-43ca-4f2d-ac36-1a8685c196f1
+When the FP will be banned, you will only need to open the gms app or use the termux command "gms".
 
 # Support
 Telegram :
@@ -34,7 +24,3 @@ CHANNEL https://t.me/PifNEXT
 PM http://t.me/furdiburd 
 
 GROUP https://t.me/playfixnext
-
-# Issues
-
-If you don't see the notification check the app permissions.
