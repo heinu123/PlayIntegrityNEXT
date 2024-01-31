@@ -4,7 +4,7 @@ If you wanna help me
 
 # Instructions
 
-• Download playcurl.zip and play integrity fix module (by chiteroman)
+• Download playcurl.zip [HERE](https://github.com/daboynb/PlayIntegrityNEXT/releases/download/fp_downloader/playcurl.zip) and play integrity fix module (by chiteroman) [HERE](https://github.com/chiteroman/PlayIntegrityFix/releases/latest)
 
 • Flash both modules and reboot
 
