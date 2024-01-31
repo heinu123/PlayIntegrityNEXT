@@ -19,12 +19,6 @@ PM http://t.me/furdiburd
 
 GROUP https://t.me/playfixnext
 
-# Extra for xiaomi eu user
-
-If you like me encounter issues on miui eu even if the XiaomiEUInject.apk is removed by the module, freeze this package too, it will fix all the issues!
-
-<img src="https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/0dfbeab9-a72f-4e35-b361-b746f9aa0a3b" width="400" height="790">
-
 # Other stuff
 Auto fp downloader for Play integrity fix by chiteroman from https://github.com/TheFreeman193/PIFS, If you like the Russian roulette :) , not all fps are working.
 [Instructions here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/PIFS%20downloader)
