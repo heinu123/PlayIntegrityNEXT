@@ -6,7 +6,7 @@ It downloads the fingerprint automatically.
 
 # Instructions
 
-• Download Play Integrity Fix Next Module 
+• Download Play Integrity Fix Next Module [HERE](https://github.com/daboynb/PlayIntegrityNEXT/releases/download/Release/PlayIntegrityFix_NEXT.zip)
 
 • Flash the PlayIntegrityFix_NEXT.zip and reboot
 
