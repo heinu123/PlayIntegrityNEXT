@@ -4,7 +4,7 @@ If you wanna help me
 
 # Play integrity fix
 
-# Auto FP Downloader app to be used with the Official Play Integrity Fix (created by me, for the Chiteroman's module)
+# Auto Fingerprint Downloader module for the Official Play Integrity Fix
 [Instructions here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman)
 
 # Play integrity fix NEXT module (Play Integrity Fix fork)
@@ -15,10 +15,6 @@ Telegram :
 
 CHANNEL https://t.me/PifNEXT
 
-PM http://t.me/furdiburd 
+PM http://t.me/furdiburd (helper)
 
 GROUP https://t.me/playfixnext
-
-# Other stuff
-Auto fp downloader for Play integrity fix by chiteroman from https://github.com/TheFreeman193/PIFS, If you like the Russian roulette :) , not all fps are working.
-[Instructions here](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/PIFS%20downloader)
