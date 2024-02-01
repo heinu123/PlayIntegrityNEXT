@@ -3,9 +3,6 @@ if [ "$API" -lt 26 ]; then
     abort "- !!! You can't use this module on Android < 8.0"
 fi
 
-# Add file
-touch /data/adb/next
-
 # safetynet-fix module is obsolete and it's incompatible with PIF.
 if [ -d /data/adb/modules/safetynet-fix ]; then
     rm -rf /data/adb/modules/safetynet-fix
