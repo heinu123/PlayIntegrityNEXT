@@ -2,6 +2,13 @@
 #!/bin/bash
 
 echo
+if [ -f /data/adb/next ]
+then
+    echo "Wrong setup! Rtfm!"
+    exit
+fi
+
+echo
 echo "[+] Deleting old pif.json"
 if [ -f /data/adb/pif.json ]
 then
