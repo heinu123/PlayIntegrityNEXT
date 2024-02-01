@@ -1,13 +1,6 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
 # Checks
-echo
-if [ -f /data/adb/next ]
-then
-    echo "Wrong setup! Rtfm!"
-    exit
-fi
-
 if [ -f "/data/adb/magisk/busybox" ]; then
     if /data/adb/magisk/busybox cat /data/adb/modules/playintegrityfix/module.prop | /data/adb/magisk/busybox grep -q 'NEXT'; then
         echo "Wrong setup! Rtfm!"
