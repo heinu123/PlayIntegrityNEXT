@@ -37,8 +37,9 @@ fi
 echo
 
 echo "[+] Check if inject apks are present"
-pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
-pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject module is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+pm disable comlineageos.pif > /dev/null 2>&1 && echo "The Lineage inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 echo
 
 kernel_var="no"
