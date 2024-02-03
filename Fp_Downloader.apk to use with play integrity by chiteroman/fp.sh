@@ -39,31 +39,15 @@ echo
 echo "[+] Check if inject apks are present"
 pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
-pm disable comlineageos.pif > /dev/null 2>&1 && echo "The Lineage inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+pm disable com.lineageos.pif > /dev/null 2>&1 && echo "The Lineage inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
 echo
 
-kernel_var="no"
+echo "[+] Downloading the pif.json"
 
-if [ "$kernel_var" == "yes" ]; then
-    echo "[+] Downloading the pif_kernel.json"
-
-    if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
-        /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
-    else
-        /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif_kernel.json" -o /data/adb/pif.json
-    fi
-
-    echo
+if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
+    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
 else
-    echo "[+] Downloading the pif.json"
-
-    if [ -f /data/adb/modules/playintegrityfix/migrate.sh ]; then
-        /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/modules/playintegrityfix/custom.pif.json
-    else
-        /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json
-    fi
-
-    echo
+    /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json > /dev/null 2>&1 || /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/autojson/main/pif.json" -o /data/adb/pif.json
 fi
 
 echo "[+] Killing com.google.android.gms"
