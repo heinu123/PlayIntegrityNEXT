@@ -66,6 +66,7 @@ fi
 
 echo
 echo "[+] Kernel:"
+echo
 uname -r
 echo
 
