@@ -25,9 +25,15 @@ fi
 
 echo
 echo "[+] Deleting old pif.json"
+
 if [ -f /data/adb/pif.json ]
 then
     rm -f "/data/adb/pif.json" > /dev/null 
+fi
+
+if [ -f /data/adb/modules/playintegrityfix/pif.json ]
+then
+    rm -f "/data/adb/modules/playintegrityfix/pif.json" > /dev/null 
 fi
 
 if [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]
