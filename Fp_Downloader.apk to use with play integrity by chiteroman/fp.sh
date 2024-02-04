@@ -14,6 +14,7 @@ elif [ -f "$ap_busybox" ]; then
 fi
 
 if "$busybox_type" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop; then
+    echo
     echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official!"
     exit
 fi
