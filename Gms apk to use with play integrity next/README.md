@@ -24,3 +24,6 @@ CHANNEL https://t.me/PifNEXT
 PM http://t.me/furdiburd 
 
 GROUP https://t.me/playfixnext
+
+# R.I.P.
+![Screenshot from 2024-02-04 19-28-20](https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/e8158904-8370-464d-aa07-ebb4ef18436b)
