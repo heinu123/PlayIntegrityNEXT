@@ -1,1 +1,1 @@
-v 5 -> added an icon to the fp_downloader app as requested by users
+v 6 -> added fpd command to test magisk modules incompatibility
