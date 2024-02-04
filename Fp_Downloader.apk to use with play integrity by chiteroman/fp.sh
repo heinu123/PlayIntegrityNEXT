@@ -1,26 +1,22 @@
 #su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
 
 # Check is the setup is correct
-if [ -f "/data/adb/magisk/busybox" ]; then
-    if /data/adb/magisk/busybox cat /data/adb/modules/playintegrityfix/module.prop | /data/adb/magisk/busybox grep -q 'NEXT'; then
-        echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official"
-        exit
-    fi
+magisk_busybox="/data/adb/magisk/busybox"
+ksu_busybox="/data/adb/ksu/bin/busybox"
+ap_busybox="/data/adb/ap/bin/busybox"
+
+if [ -f "$magisk_busybox" ]; then
+    busybox_type="$magisk_busybox"
+elif [ -f "$ksu_busybox" ]; then
+    busybox_type="$ksu_busybox"
+elif [ -f "$ap_busybox" ]; then
+    busybox_type="$ap_busybox"
 fi
 
-if [ -f "/data/adb/ksu/bin/busybox" ]; then
-    if /data/adb/ksu/bin/busybox cat /data/adb/modules/playintegrityfix/module.prop | /data/adb/magisk/busybox grep -q 'NEXT'; then
-        echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official"
-        exit
-    fi
+if "$busybox_type" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop; then
+    echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official!"
 fi
 
-if [ -f "/data/adb/ap/bin/busybox" ]; then
-    if /data/adb/ap/bin/busybox cat /data/adb/modules/playintegrityfix/module.prop | /data/adb/magisk/busybox grep -q 'NEXT'; then
-        echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official"
-        exit
-    fi
-fi
 # End of checks
 
 # Delete outdated pif.json
