@@ -1,8 +1,8 @@
-# Download from 
-https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/Release
+# Outdated and deleted module
+# R.I.P.
+![Screenshot from 2024-02-04 19-28-20](https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/e8158904-8370-464d-aa07-ebb4ef18436b)
 
-# Why this fork?
-It downloads the fingerprint automatically.
+USE [THIS](https://github.com/daboynb/PlayIntegrityNEXT/tree/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman) INSTEAD
 
 # Instructions
 
@@ -24,6 +24,3 @@ CHANNEL https://t.me/PifNEXT
 PM http://t.me/furdiburd 
 
 GROUP https://t.me/playfixnext
-
-# R.I.P.
-![Screenshot from 2024-02-04 19-28-20](https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/e8158904-8370-464d-aa07-ebb4ef18436b)
