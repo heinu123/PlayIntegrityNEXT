@@ -81,7 +81,7 @@ banned_names=("aicp" "arter97" "blu_spark" "cm" "crdroid" "cyanogenmod" "deathly
 banned=false
 
 for keyword in "${banned_names[@]}"; do
-    if echo "$kernel_name" | grep -iq "$keyword"; then
+    if echo "$kernel_name" | "$busybox_type" grep -iq "$keyword"; then
         echo
         echo "[+] Your kernel name \"$keyword\" is banned"
         banned=true
