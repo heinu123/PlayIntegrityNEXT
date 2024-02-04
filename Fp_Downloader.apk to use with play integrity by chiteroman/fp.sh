@@ -86,13 +86,15 @@ banned=false
 
 for keyword in "${banned_names[@]}"; do
     if echo "$kernel_name" | grep -iq "$keyword"; then
-        echo "Your kernel name \"$keyword\" is banned"
+        echo
+        echo "[+] Your kernel name \"$keyword\" is banned"
         banned=true
     fi
 done
 
 if [ "$banned" = false ]; then
-    echo "Your kernel name is not banned"
+    echo
+    echo "[+] Your kernel name is not banned"
 fi
 
 rm "$0"
