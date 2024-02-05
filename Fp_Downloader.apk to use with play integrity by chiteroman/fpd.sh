@@ -12,7 +12,7 @@ elif [ -f "$ap_busybox" ]; then
     busybox_type="$ap_busybox"
 fi
 
-echo Your busybox is "$busybox_type"
+echo "[+] Your busybox is "$busybox_type""
 
 # Modules path
 modules_dir="/data/adb/modules"
@@ -35,7 +35,7 @@ for subdir in "$modules_dir"/*/; do
 done
 
 if [ ${#disabled_modules[@]} -gt 0 ]; then
-    echo "Disabled modules: ${disabled_modules[@]}"
+    echo "[+] Disabled modules: ${disabled_modules[@]}"
 else
-    echo "No modules disabled."
+    echo "[+] No modules disabled."
 fi
