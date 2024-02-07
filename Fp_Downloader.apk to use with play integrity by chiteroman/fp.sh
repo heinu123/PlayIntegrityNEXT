@@ -19,6 +19,13 @@ if "$busybox_type" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop
     exit
 fi
 
+current_user=$($busybox_type whoami)
+
+if [ "$current_user" != "root" ]; then
+    echo "You are not the root user. This script requires root privileges."
+    exit 1
+fi
+
 # End of checks
 
 # Delete outdated pif.json
