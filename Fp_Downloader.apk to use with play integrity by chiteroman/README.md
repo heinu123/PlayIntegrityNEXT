@@ -2,6 +2,9 @@ If you wanna help me
 
 <a href="https://www.buymeacoffee.com/daboynb" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
+# Video tutorial
+https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/02ee27b8-edb3-43ec-8a50-417ce174fd66
+
 # Instructions
 
 • Download playcurl.zip [HERE](https://github.com/daboynb/PlayIntegrityNEXT/releases/download/playcurl/playcurl.zip) and play integrity fix module (by chiteroman) [HERE](https://github.com/chiteroman/PlayIntegrityFix/releases/latest)

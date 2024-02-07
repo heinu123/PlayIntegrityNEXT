@@ -92,7 +92,7 @@ banned=false
 for keyword in "${banned_names[@]}"; do
     if echo "$kernel_name" | "$busybox_type" grep -iq "$keyword"; then
         echo
-        echo "[+] Your kernel name \"$keyword\" is banned"
+        echo "[+] Your kernel name \"$keyword\" is banned. If you are passing device integrity you can ignore this mesage, otherwise that's probably the cause. "
         banned=true
     fi
 done
