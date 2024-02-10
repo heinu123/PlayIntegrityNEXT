@@ -85,21 +85,16 @@ fi
 kernel_name=$(uname -r)
 
 # Banned kernels names from https://xdaforums.com/t/module-play-integrity-fix-safetynet-fix.4607985/post-89308909
-banned_names=("aicp" "arter97" "blu_spark" "cm" "crdroid" "cyanogenmod" "deathly" "eas" "elementalx" "elite" "franco" "lineage" "lineageos" "noble" "optimus" "slimroms" "sultan")
+banned_names=("aicp" "arter97" "blu_spark" "cm" "crdroid" "cyanogenmod" "deathly" "eas" "elementalx" "elite" "franco" "lineage" "lineageos" "noble" "optimus" "slimroms" "sultan" "evox")
 
 banned=false
 
 for keyword in "${banned_names[@]}"; do
     if echo "$kernel_name" | "$busybox_type" grep -iq "$keyword"; then
         echo
-        echo "[+] Your kernel name \"$keyword\" is banned. If you are passing device integrity you can ignore this mesage, otherwise that's probably the cause. "
+        echo "[-] Your kernel name \"$keyword\" is banned. If you are passing device integrity you can ignore this mesage, otherwise that's probably the cause. "
         banned=true
     fi
 done
-
-if [ "$banned" = false ]; then
-    echo
-    echo "[+] Your kernel name is not banned"
-fi
 
 rm "$0"
