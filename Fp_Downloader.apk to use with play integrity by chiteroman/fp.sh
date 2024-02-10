@@ -47,6 +47,7 @@ for file_path in "${file_paths[@]}"; do
         deleted=true
     fi
 done
+echo
 
 # Disable problematic packages
 echo "[+] Check if inject apks are present"
