@@ -50,9 +50,16 @@ echo
 
 # Disable problematic packages
 echo "[+] Check if inject apks are present"
-pm disable eu.xiaomi.module.inject > /dev/null 2>&1 && echo "The miui eu inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
-pm disable com.goolag.pif > /dev/null 2>&1 && echo "The Evolution X inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
-pm disable com.lineageos.pif > /dev/null 2>&1 && echo "The Lineage inject apk is disabled now. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!." || true
+apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif")
+pif_apk=false
+
+for apk in "${apk_names[@]}"; do
+    if pm disable "$apk" 2>/dev/null; then
+        echo
+        echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
+        pif_apk=true
+    fi
+done
 echo
 
 # Download pif.json
@@ -86,7 +93,6 @@ kernel_name=$(uname -r)
 
 # Banned kernels names from https://xdaforums.com/t/module-play-integrity-fix-safetynet-fix.4607985/post-89308909
 banned_names=("aicp" "arter97" "blu_spark" "cm" "crdroid" "cyanogenmod" "deathly" "eas" "elementalx" "elite" "franco" "lineage" "lineageos" "noble" "optimus" "slimroms" "sultan" "evox")
-
 banned=false
 
 for keyword in "${banned_names[@]}"; do
