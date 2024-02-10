@@ -32,21 +32,21 @@ if [ "$current_user" != "root" ]; then
 fi
 
 # Delete outdated pif.json
+echo "[+] Deleting old pif.json"
 file_paths=(
     "/data/adb/pif.json"
     "/data/adb/modules/playintegrityfix/pif.json"
     "/data/adb/modules/playintegrityfix/custom.pif.json"
 )
 
-file_path=""
+deleted=false
 
 for file_path in "${file_paths[@]}"; do
-    echo "[+] Deleting ${file_path}"
     if [ -f "$file_path" ]; then
         rm -f "$file_path" > /dev/null
+        deleted=true
     fi
 done
-echo
 
 # Disable problematic packages
 echo "[+] Check if inject apks are present"
