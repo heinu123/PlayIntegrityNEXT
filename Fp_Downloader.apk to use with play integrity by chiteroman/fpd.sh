@@ -1,18 +1,18 @@
 # Detect busybox
-magisk_busybox="/data/adb/magisk/busybox"
-ksu_busybox="/data/adb/ksu/bin/busybox"
-ap_busybox="/data/adb/ap/bin/busybox"
+busybox_paths=(
+    "/data/adb/magisk/busybox"
+    "/data/adb/ksu/bin/busybox"
+    "/data/adb/ap/bin/busybox"
+)
 
-# Set path
-if [ -f "$magisk_busybox" ]; then
-    busybox_type="$magisk_busybox"
-elif [ -f "$ksu_busybox" ]; then
-    busybox_type="$ksu_busybox"
-elif [ -f "$ap_busybox" ]; then
-    busybox_type="$ap_busybox"
-fi
+busybox_path=""
 
-echo "[+] Your busybox is "$busybox_type""
+for path in "${busybox_paths[@]}"; do
+    if [ -f "$path" ]; then
+        busybox_path="$path"
+        break
+    fi
+done
 
 # Modules path
 modules_dir="/data/adb/modules"
@@ -24,7 +24,7 @@ for subdir in "$modules_dir"/*/; do
         module_prop="$subdir/module.prop"
         
         if [ -f "$module_prop" ]; then
-            module_name=$("$busybox_type" grep -E 'name=Zygisk Next|name=Play Integrity Fix|name=playcurl' "$module_prop")            
+            module_name=$("$busybox_path" grep -E 'name=Zygisk Next|name=Play Integrity Fix|name=playcurl' "$module_prop")            
             if [ -z "$module_name" ]; then
                 touch "$subdir/disable"
                 disabled_module_name=$(basename "$subdir")
@@ -36,6 +36,7 @@ done
 
 if [ ${#disabled_modules[@]} -gt 0 ]; then
     echo "[+] Disabled modules: ${disabled_modules[@]}"
+    reboot
 else
     echo "[+] No modules disabled."
 fi
