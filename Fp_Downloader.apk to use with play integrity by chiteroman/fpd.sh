@@ -49,9 +49,9 @@ for file_path in "${file_paths[@]}"; do
 done
 echo
 
-# Disable problematic packages
+# Disable problematic packages, miui eu, EvoX, lineage, PixelOS
 echo "[+] Check if inject apks are present"
-apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif")
+apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
 pif_apk=false
 
 for apk in "${apk_names[@]}"; do
