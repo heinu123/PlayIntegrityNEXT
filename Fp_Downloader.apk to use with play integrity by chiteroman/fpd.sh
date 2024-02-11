@@ -124,6 +124,7 @@ done
 # Print the result
 if [ ${#disabled_modules[@]} -gt 0 ]; then
     echo "[+] Disabled modules: ${disabled_modules[@]}"
+    sleep 04
     reboot
 else
     echo "[+] No modules disabled."
