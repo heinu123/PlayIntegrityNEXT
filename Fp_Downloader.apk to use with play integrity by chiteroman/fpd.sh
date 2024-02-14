@@ -90,8 +90,8 @@ for app in "${app_names[@]}"; do
     pm disable "${app}" > /dev/null
     rm -rf /data/data/"${app}"/cache/* > /dev/null
     pm enable "${app}" > /dev/null
-    echo
 done
+echo
 
 # Check if the pif is present
 if [ -f /data/adb/pif.json ] || [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]; then
