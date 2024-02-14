@@ -81,6 +81,16 @@ for package in "${package_names[@]}"; do
     echo
 done
 
+# Clear cache of some apps
+app_names=("com.google.android.apps.walletnfcrel" "com.android.vending" "com.google.android.gms")
+
+echo "[+] Clearing cache"
+
+for app in "${app_names[@]}"; do
+    rm -rf /data/data/"${app}"/cache/*
+    echo
+done
+
 # Check if the pif is present
 if [ -f /data/adb/pif.json ] || [ -f /data/adb/modules/playintegrityfix/custom.pif.json ]; then
     echo "[+] Pif.json downloaded successfully"
