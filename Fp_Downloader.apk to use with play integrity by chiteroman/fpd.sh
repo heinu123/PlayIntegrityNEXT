@@ -87,7 +87,7 @@ app_names=("com.google.android.apps.walletnfcrel" "com.android.vending" "com.goo
 echo "[+] Clearing cache"
 
 for app in "${app_names[@]}"; do
-    rm -rf /data/data/"${app}"/cache/*
+    rm -rf /data/data/"${app}"/cache/* > /dev/null
     echo
 done
 
