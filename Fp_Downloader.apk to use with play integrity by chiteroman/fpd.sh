@@ -87,9 +87,8 @@ app_names=("com.google.android.apps.walletnfcrel" "com.android.vending" "com.goo
 echo "[+] Clearing cache"
 
 for app in "${app_names[@]}"; do
-    pm disable "${app}" > /dev/null
+    pkill -f "${app}" > /dev/null
     rm -rf /data/data/"${app}"/cache/* > /dev/null
-    pm enable "${app}" > /dev/null
 done
 echo
 
