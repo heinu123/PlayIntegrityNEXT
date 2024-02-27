@@ -82,14 +82,8 @@ for package in "${package_names[@]}"; do
 done
 
 # Clear the cache of some apps
-app_names=("com.google.android.apps.walletnfcrel" "com.android.vending" "com.google.android.gms")
-
 echo "[+] Clearing cache"
-
-for app in "${app_names[@]}"; do
-    pkill -f "${app}" > /dev/null
-    rm -rf /data/data/"${app}"/cache/* > /dev/null
-done
+pm trim-caches 999G 
 echo
 
 # Check if the pif is present
