@@ -88,6 +88,7 @@ for apk in "${apk_names[@]}"; do
         fi
     fi
 done
+echo
 
 # Download pif.json
 echo "[+] Downloading the pif.json"
