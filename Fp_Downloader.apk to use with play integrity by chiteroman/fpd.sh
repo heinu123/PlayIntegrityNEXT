@@ -133,9 +133,9 @@ for module in $list; do
     touch "$module/disable"
 done
 
-rm /data/adb/modules/playintegrityfix/disable > /dev/null
-rm /data/adb/modules/playcurl/disable > /dev/null
-rm /data/adb/modules/zygisksu/disable > /dev/null
+rm /data/adb/modules/playintegrityfix/disable > /dev/null 2>/dev/null
+rm /data/adb/modules/playcurl/disable > /dev/null 2>/dev/null
+rm /data/adb/modules/zygisksu/disable > /dev/null 2>/dev/null
 
 # Auto delete the script
 rm "$0"
