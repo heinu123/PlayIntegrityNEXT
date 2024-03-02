@@ -101,11 +101,12 @@ echo
 # Kill gms processes and wallet
 package_names=("com.google.android.gms" "com.google.android.gms.unstable" "com.google.android.apps.walletnfcrel")
 
+echo "[+] Killing some apps"
+
 for package in "${package_names[@]}"; do
-    echo "[+] Killing ${package}"
     pkill -f "${package}" > /dev/null
-    echo
 done
+echo
 
 # Clear the cache of all apps
 echo "[+] Clearing cache"
