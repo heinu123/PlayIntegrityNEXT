@@ -131,6 +131,7 @@ for keyword in "${banned_names[@]}"; do
     fi
 done
 
+echo ""
 echo "Remember, wallet can take up to 24 hrs to work again!"
 
 # Auto delete the script
