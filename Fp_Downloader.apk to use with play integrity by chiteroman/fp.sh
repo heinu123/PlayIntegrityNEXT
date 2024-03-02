@@ -78,16 +78,16 @@ done
 echo
 
 # Disable problematic packages, miui eu, EvoX, lineage, PixelOS
-echo "[+] Check if inject apks are present"
 apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
+echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
-    if pm disable "$apk" 2>/dev/null; then
-        echo
-        echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
+    if pm list packages -d | grep "$apk" > /dev/null; then
+        if pm disable "$apk" > /dev/null 2>&1; then
+            echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
+        fi
     fi
 done
-echo
 
 # Download pif.json
 echo "[+] Downloading the pif.json"
