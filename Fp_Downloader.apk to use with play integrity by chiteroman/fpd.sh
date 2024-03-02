@@ -31,6 +31,27 @@ if [ "$current_user" != "root" ]; then
     exit 1
 fi
 
+# Check for zygisk
+if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
+  if [ -d "/data/adb/modules/zygisksu" ]; then
+    :
+  else
+    echo You need zygisk!
+    rm "$0"
+    exit 1
+  fi
+fi
+
+if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
+  if [ -d "/data/adb/modules/zygisksu" ]; then
+    :
+  else
+    echo You need zygisk!
+    rm "$0"
+    exit 1
+  fi
+fi
+
 # Delete outdated pif.json
 echo "[+] Deleting old pif.json"
 file_paths=(
@@ -72,8 +93,8 @@ else
 fi
 echo 
 
-# Kill gms processes
-package_names=("com.google.android.gms" "com.google.android.gms.unstable")
+# Kill gms processes and wallet
+package_names=("com.google.android.gms" "com.google.android.gms.unstable" "com.google.android.apps.walletnfcrel")
 
 for package in "${package_names[@]}"; do
     echo "[+] Killing ${package}"
@@ -81,7 +102,7 @@ for package in "${package_names[@]}"; do
     echo
 done
 
-# Clear the cache of some apps
+# Clear the cache of all apps
 echo "[+] Clearing cache"
 pm trim-caches 999G 
 echo
@@ -114,7 +135,7 @@ done
 
 rm /data/adb/modules/playintegrityfix/disable > /dev/null
 rm /data/adb/modules/playcurl/disable > /dev/null
-rm /data/adb/modules/zygisk*/disable > /dev/null
+rm /data/adb/modules/zygisksu/disable > /dev/null
 
 # Auto delete the script
 rm "$0"
