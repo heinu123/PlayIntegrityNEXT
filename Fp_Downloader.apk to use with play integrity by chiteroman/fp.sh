@@ -52,6 +52,16 @@ if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
   fi
 fi
 
+# Remove from denylist google play services, google service framework
+magisk_package_names=("com.google.android.gms" "com.google.android.gsf" )
+
+if [ "$busybox_path" = "/data/adb/magisk/busybox" ]; then
+    for magisk_package in "${magisk_package_names[@]}"; do
+        magisk --denylist rm "${magisk_package}" > /dev/null 2>/dev/null
+    done
+fi
+echo "" 
+
 # Delete outdated pif.json
 echo "[+] Deleting old pif.json"
 file_paths=(
@@ -60,12 +70,9 @@ file_paths=(
     "/data/adb/modules/playintegrityfix/custom.pif.json"
 )
 
-deleted=false
-
 for file_path in "${file_paths[@]}"; do
     if [ -f "$file_path" ]; then
         rm -f "$file_path" > /dev/null
-        deleted=true
     fi
 done
 echo
@@ -73,13 +80,11 @@ echo
 # Disable problematic packages, miui eu, EvoX, lineage, PixelOS
 echo "[+] Check if inject apks are present"
 apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
-pif_apk=false
 
 for apk in "${apk_names[@]}"; do
     if pm disable "$apk" 2>/dev/null; then
         echo
         echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
-        pif_apk=true
     fi
 done
 echo
@@ -117,13 +122,11 @@ fi
 # Check if the kernel name is banned, banned kernels names from https://xdaforums.com/t/module-play-integrity-fix-safetynet-fix.4607985/post-89308909 and telegram
 get_kernel_name=$(uname -r)
 banned_names=("aicp" "arter97" "blu_spark" "cm" "crdroid" "cyanogenmod" "deathly" "eas" "elementalx" "elite" "franco" "lineage" "lineageos" "noble" "optimus" "slimroms" "sultan")
-is_banned=false
 
 for keyword in "${banned_names[@]}"; do
     if echo "$get_kernel_name" | "$busybox_path" grep -iq "$keyword"; then
         echo
         echo "[-] Your kernel name \"$keyword\" is banned. If you are passing device integrity you can ignore this mesage, otherwise that's probably the cause. "
-        is_banned=true
     fi
 done
 
