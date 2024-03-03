@@ -1,1 +1,1 @@
-v 6 -> added fpd command to test magisk modules incompatibility
+v 7 -> The Tasker app will now run the "fp" command every hour (starting from 07:00 to 24:00 to avoid battery drain)
