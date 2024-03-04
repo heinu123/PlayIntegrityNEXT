@@ -1,1 +1,1 @@
-v 7 -> The Tasker app will now run the "fp" command every hour (starting from 07:00 to 24:00 to avoid battery drain)
+v 8 -> The Tasker app will now run the "fp" command every 6 hours instead of every hour to avoid battery drain. You can still disable it, you can use termux instead.
