@@ -1,1 +1,1 @@
-v 8 -> The Tasker app will now run the "fp" command every 6 hours instead of every hour to avoid battery drain. You can still disable it, you can use termux instead.
+V9 -> "You will now be able to choose whether you want the auto-update feature enabled or not."

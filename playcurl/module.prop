@@ -1,7 +1,7 @@
 id=playcurl
 name=playcurl
-version=v8
-versionCode=800
+version=v9
+versionCode=900
 author=daboynb
 description=Fingerprint downloader for play integrity fix.
 updateJson=https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/update.json
