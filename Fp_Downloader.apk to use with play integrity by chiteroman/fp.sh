@@ -88,9 +88,9 @@ apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.ao
 echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
+    pm uninstall "$apk" > /dev/null 2>&1
     if ! pm list packages -d | grep "$apk" > /dev/null; then
         if pm disable "$apk" > /dev/null 2>&1; then
-            pm uninstall "$apk" > /dev/null 2>&1
             echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
         fi
     fi
