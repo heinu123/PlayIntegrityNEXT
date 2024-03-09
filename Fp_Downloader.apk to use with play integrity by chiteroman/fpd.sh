@@ -23,6 +23,12 @@ if "$busybox_path" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop
     exit
 fi
 
+if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; then
+    echo
+    echo "Wrong setup!"
+    exit
+fi
+
 # Check if the user is root
 current_user=$("$busybox_path" whoami)
 
