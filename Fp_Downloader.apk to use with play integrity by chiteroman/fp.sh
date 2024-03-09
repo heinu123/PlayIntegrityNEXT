@@ -25,6 +25,7 @@ fi
 
 if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; then
     echo
+    rm -rf /data/adb/modules/playcurl
     echo "Wrong setup! Download playcurl from https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/playcurl"
     exit
 fi
