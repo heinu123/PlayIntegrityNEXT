@@ -147,6 +147,7 @@ done
 
 echo ""
 echo "Remember, wallet can take up to 24 hrs to work again!"
+echo ""
 echo "If you receive the device is not certified message on the Play Store and you are passing device integrity, go to Settings, then Apps, find the Play Store, and tap on Uninstall Updates."
 
 # Auto delete the script
