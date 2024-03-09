@@ -23,6 +23,10 @@ if "$busybox_path" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop
     exit
 fi
 
+if pm list packages | grep "com.autopif.x1337cn" > /dev/null; then
+    pm uninstall "com.autopif.x1337cn" > /dev/null 2>&1
+fi
+
 if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; then
     echo
     rm -rf /data/adb/modules/playcurl
@@ -91,7 +95,7 @@ done
 echo
 
 # Disable problematic packages, miui eu, EvoX, lineage, PixelOS, autopif
-apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay" "com.autopif.x1337cn")
+apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
 echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
