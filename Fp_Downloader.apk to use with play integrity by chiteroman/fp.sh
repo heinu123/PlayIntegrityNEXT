@@ -23,7 +23,7 @@ if "$busybox_path" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop
     exit
 fi
 
-if pm list packages | grep "com.autopif.x1337cn" > /dev/null; then
+if pm list packages | "$busybox_path" grep "com.autopif.x1337cn" > /dev/null; then
     pm uninstall "com.autopif.x1337cn" > /dev/null 2>&1
 fi
 
