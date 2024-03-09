@@ -25,7 +25,7 @@ fi
 
 if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; then
     echo
-    echo "Wrong setup!"
+    echo "Wrong setup! Download playcurl from https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/playcurl"
     exit
 fi
 
@@ -89,8 +89,8 @@ for file_path in "${file_paths[@]}"; do
 done
 echo
 
-# Disable problematic packages, miui eu, EvoX, lineage, PixelOS
-apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
+# Disable problematic packages, miui eu, EvoX, lineage, PixelOS, autopif
+apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay" "com.autopif.x1337cn")
 echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
@@ -144,6 +144,12 @@ for keyword in "${banned_names[@]}"; do
         echo "[-] Your kernel name \"$keyword\" is banned. If you are passing device integrity you can ignore this mesage, otherwise that's probably the cause. "
     fi
 done
+
+echo ""
+echo "Remember, wallet can take up to 24 hrs to work again!"
+
+# Auto delete the script
+rm "$0"
 
 # Disable other modules for testing incompatibility
 list="$("$busybox_path" find /data/adb/modules/* -prune -type d)"
