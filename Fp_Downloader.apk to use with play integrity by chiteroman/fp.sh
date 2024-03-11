@@ -42,12 +42,6 @@ if [ "$current_user" != "root" ]; then
     exit 1
 fi
 
-# Check for internet connection
-if ! "$busybox_path" ping -c1 www.google.com > /dev/null 2>&1; then
-    echo "No internet connection, exiting"
-    exit
-fi
-
 # Check for zygisk
 if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
