@@ -186,7 +186,7 @@ uiautomator dump "$xml" >/dev/null 2>&1
 killall $spic >/dev/null 2>&1
 
 spic_error="TOO_MANY_REQUESTS" 
-if grep -q "$spic_error" "$xml"; then
+if "$busybox_path" grep -q "$spic_error" "$xml"; then
     echo ""
     echo "$spic_error detected."
     echo ""
