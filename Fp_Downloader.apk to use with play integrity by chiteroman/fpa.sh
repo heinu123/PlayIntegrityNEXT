@@ -195,11 +195,10 @@ fi
 exit
 
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY" "MEETS_STRONG_INTEGRITY")
-resultlog="${STORAGE_DIR}/piftest_results.log"
 
 for meets in $integrities; do
     if "$busybox_path" grep -q "$meets" "$xml"; then
-        echo "$meets detected." | "$busybox_path" tee -a "$resultlog"
+        echo "$meets detected."
         break
     fi
 done
