@@ -147,7 +147,8 @@ local_apk_path="/data/local/tmp/spic-v1.4.0.apk"
 apk_url="https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
 
 # Check if SPIC app is already installed
-if pm list packages | "$busybox_path" grep "$spic" ; then
+if pm list packages | "$busybox_path" grep "$spic" >/dev/null 2>&1; then
+    echo ""
     echo "The SPIC app is already installed!"
     echo ""
 else
@@ -174,7 +175,6 @@ STORAGE_DIR="/storage/emulated/0"
 xml="${STORAGE_DIR}/testresult.xml"
 
 uiautomator dump "$xml" >/dev/null 2>&1
-echo ""
 
 killall $spic >/dev/null 2>&1
 
@@ -190,7 +190,5 @@ done
 
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     fpd
-    echo ""
-    echo "Running the fpd command, the phone will reboot!"
     echo ""
 fi
