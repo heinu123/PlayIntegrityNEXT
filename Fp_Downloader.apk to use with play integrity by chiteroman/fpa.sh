@@ -166,6 +166,7 @@ killall $spic >/dev/null 2>&1
 
 # Start the automation
 echo "The SPIC app will open in 3 seconds... DO NOT TOUCH ANYTHING!"
+echo "It will be closed automatically!"
 echo ""
 sleep 3
 
@@ -219,4 +220,6 @@ if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     rm $xml >/dev/null 2>&1
     rm $resultlog >/dev/null 2>&1
     fpd
+else
+    echo "All is ok, enjoy"
 fi
