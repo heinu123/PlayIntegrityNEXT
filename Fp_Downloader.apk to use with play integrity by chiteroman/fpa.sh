@@ -161,14 +161,19 @@ fi
 
 killall $spic >/dev/null 2>&1
 
+echo "The SPIC app will open in 3 seconds... DO NOT TOUCH ANYTHING!"
+sleep 3
+
 am start -n $spic/$spic.MainActivity >/dev/null 2>&1
-sleep 2
+sleep 3
 
 input keyevent KEYCODE_DPAD_UP
+sleep 1
 input keyevent KEYCODE_DPAD_UP
+sleep 1
 input keyevent KEYCODE_DPAD_UP
+sleep 1
 input keyevent KEYCODE_ENTER
-
 sleep 10
 
 STORAGE_DIR="/storage/emulated/0"
