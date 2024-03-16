@@ -142,6 +142,7 @@ for keyword in "${banned_names[@]}"; do
     fi
 done
 
+# Variables for the apk
 spic="com.henrikherzig.playintegritychecker"
 local_apk_path="/data/local/tmp/spic-v1.4.0.apk"
 apk_url="https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
@@ -160,15 +161,19 @@ else
     rm "$local_apk_path" >/dev/null 2>&1
 fi
 
+# Kill the spic app
 killall $spic >/dev/null 2>&1
 
+# Start the automation
 echo "The SPIC app will open in 3 seconds... DO NOT TOUCH ANYTHING!"
 echo ""
 sleep 3
 
+# Launch the app
 am start -n $spic/$spic.MainActivity >/dev/null 2>&1
 sleep 3
 
+# Use input to start a check
 input keyevent KEYCODE_DPAD_UP
 sleep 1
 input keyevent KEYCODE_DPAD_UP
@@ -178,13 +183,17 @@ sleep 1
 input keyevent KEYCODE_ENTER
 sleep 10
 
+# Variables for log
 STORAGE_DIR="/storage/emulated/0"
 xml="${STORAGE_DIR}/testresult.xml"
 
+# Dump the current app result
 uiautomator dump "$xml" >/dev/null 2>&1
 
+# Kill the app again
 killall $spic >/dev/null 2>&1
 
+# Check if the app hit the maximum request per day
 spic_error="TOO_MANY_REQUESTS" 
 if "$busybox_path" grep -q "$spic_error" "$xml"; then
     echo ""
@@ -194,6 +203,7 @@ if "$busybox_path" grep -q "$spic_error" "$xml"; then
 fi
 exit
 
+# Check if device integrity passed
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY" "MEETS_STRONG_INTEGRITY")
 
 for meets in $integrities; do
@@ -203,6 +213,7 @@ for meets in $integrities; do
     fi
 done
 
+# If no integrity run the fpd command as last chance
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     echo "Running the fpd command, the phone will reboot!"
     rm $xml >/dev/null 2>&1
