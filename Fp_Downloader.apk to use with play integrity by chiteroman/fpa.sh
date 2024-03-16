@@ -194,6 +194,7 @@ for meets in $integrities; do
 done
 
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
+    echo "Running the fpd command, the phone will reboot!"
+    rm $xml >/dev/null 2>&1
     fpd
-    echo ""
 fi
