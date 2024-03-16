@@ -184,6 +184,13 @@ uiautomator dump "$xml" >/dev/null 2>&1
 
 killall $spic >/dev/null 2>&1
 
+spic_error="TOO_MANY_REQUESTS" 
+if grep -q "$spic_error" "$xml"; then
+    echo "$spic_error detected."
+    echo "The app hit the maximum API request per day!"
+fi
+exit
+
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY" "MEETS_STRONG_INTEGRITY")
 resultlog="${STORAGE_DIR}/piftest_results.log"
 
