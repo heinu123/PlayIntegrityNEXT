@@ -159,7 +159,8 @@ sleep 10
 STORAGE_DIR="/storage/emulated/0"
 xml="${STORAGE_DIR}/testresult.xml"
 
-uiautomator dump "$xml"
+uiautomator dump "$xml" >/dev/null 2>&1
+echo ""
 
 killall $spic >/dev/null 2>&1
 
@@ -175,4 +176,7 @@ done
 
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     fpd
+    echo ""
+    echo "Running the fpd command, the phone will reboot!"
+    echo ""
 fi
