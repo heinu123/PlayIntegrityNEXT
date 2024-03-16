@@ -163,6 +163,7 @@ fi
 killall $spic >/dev/null 2>&1
 
 echo "The SPIC app will open in 3 seconds... DO NOT TOUCH ANYTHING!"
+echo ""
 sleep 3
 
 am start -n $spic/$spic.MainActivity >/dev/null 2>&1
@@ -186,7 +187,9 @@ killall $spic >/dev/null 2>&1
 
 spic_error="TOO_MANY_REQUESTS" 
 if grep -q "$spic_error" "$xml"; then
+    echo ""
     echo "$spic_error detected."
+    echo ""
     echo "The app hit the maximum API request per day!"
 fi
 exit
