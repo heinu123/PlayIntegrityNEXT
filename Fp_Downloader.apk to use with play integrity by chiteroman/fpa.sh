@@ -1,5 +1,3 @@
-#su -c "cd /storage/emulated/0 && /system/bin/curl -L "https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh" -o fp.sh && /system/bin/sh fp.sh"
-
 # Detect busybox
 busybox_paths=(
     "/data/adb/magisk/busybox"
@@ -144,23 +142,37 @@ for keyword in "${banned_names[@]}"; do
     fi
 done
 
-echo ""
-echo "Remember, wallet can take up to 24 hrs to work again!"
+killall $spic >/dev/null 2>&1
 
-# Auto delete the script
-rm "$0"
+spic="com.henrikherzig.playintegritychecker"
 
-# Disable other modules for testing incompatibility
-list="$("$busybox_path" find /data/adb/modules/* -prune -type d)"
-for module in $list; do
-    touch "$module/disable"
+am start -n $spic/$spic.MainActivity >/dev/null 2>&1
+sleep 2
+
+input keyevent KEYCODE_DPAD_UP
+input keyevent KEYCODE_DPAD_UP
+input keyevent KEYCODE_DPAD_UP
+input keyevent KEYCODE_ENTER
+
+sleep 10
+
+STORAGE_DIR="/storage/emulated/0"
+xml="${STORAGE_DIR}/testresult.xml"
+
+uiautomator dump "$xml"
+
+killall $spic >/dev/null 2>&1
+
+integrities="NO_INTEGRITY MEETS_VIRTUAL_INTEGRITY MEETS_BASIC_INTEGRITY MEETS_DEVICE_INTEGRITY MEETS_STRONG_INTEGRITY"
+resultlog="${STORAGE_DIR}/piftest_results.log"
+
+for meets in $integrities; do
+    if "$busybox_path" grep -q "$meets" "$xml"; then
+        echo "$meets detected." | tee -a "$resultlog"
+        break
+    fi
 done
 
-rm /data/adb/modules/playintegrityfix/disable > /dev/null 2>/dev/null
-rm /data/adb/modules/playcurl/disable > /dev/null 2>/dev/null
-rm /data/adb/modules/zygisksu/disable > /dev/null 2>/dev/null
-
-# Auto delete the script
-rm "$0"
-
-reboot >/dev/null 2>&1
+if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
+    fpd
+fi

@@ -150,4 +150,4 @@ echo ""
 echo "If you receive the device is not certified message on the Play Store and you are passing device integrity, go to Settings, then Apps, find the Play Store, and tap on Uninstall Updates."
 
 # Auto delete the script
-rm "$0"
+rm "$0" >/dev/null 2>&1
