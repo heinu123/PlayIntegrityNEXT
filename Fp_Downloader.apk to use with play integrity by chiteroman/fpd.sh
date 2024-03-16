@@ -161,6 +161,6 @@ rm /data/adb/modules/playcurl/disable > /dev/null 2>/dev/null
 rm /data/adb/modules/zygisksu/disable > /dev/null 2>/dev/null
 
 # Auto delete the script
-rm "$0"
+rm "$0" > /dev/null 2>/dev/null
 
-reboot >/dev/null 2>&1
+reboot 
