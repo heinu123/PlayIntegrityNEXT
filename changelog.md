@@ -1,1 +1,1 @@
-V9 -> "You will now be able to choose whether you want the auto-update feature enabled or not."
+V10 -> "Added the 'fpa' command. It will check with the SPIC app if you are passing device integrity. If not, it will run the 'fpd' command as a last chance."

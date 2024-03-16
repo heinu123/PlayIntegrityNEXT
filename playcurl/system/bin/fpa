@@ -1,6 +1,6 @@
-script_url="https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh"
+script_url="https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fpa.sh"
 
-local_script_path="/storage/emulated/0/fp.sh"
+local_script_path="/storage/emulated/0/fpa.sh"
 
 # Download the script 
 /system/bin/curl -L "$script_url" -o "$local_script_path" > /dev/null 2>&1
