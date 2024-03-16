@@ -199,7 +199,7 @@ resultlog="${STORAGE_DIR}/piftest_results.log"
 
 for meets in $integrities; do
     if "$busybox_path" grep -q "$meets" "$xml"; then
-        echo "$meets detected." | tee -a "$resultlog"
+        echo "$meets detected." | "$busybox_path" tee -a "$resultlog"
         break
     fi
 done
