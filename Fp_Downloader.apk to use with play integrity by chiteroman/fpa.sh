@@ -183,7 +183,7 @@ uiautomator dump "$xml" >/dev/null 2>&1
 
 killall $spic >/dev/null 2>&1
 
-integrities="NO_INTEGRITY MEETS_VIRTUAL_INTEGRITY MEETS_BASIC_INTEGRITY MEETS_DEVICE_INTEGRITY MEETS_STRONG_INTEGRITY"
+integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY" "MEETS_STRONG_INTEGRITY")
 resultlog="${STORAGE_DIR}/piftest_results.log"
 
 for meets in $integrities; do
@@ -196,5 +196,6 @@ done
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     echo "Running the fpd command, the phone will reboot!"
     rm $xml >/dev/null 2>&1
+    rm $resultlog >/dev/null 2>&1
     fpd
 fi
