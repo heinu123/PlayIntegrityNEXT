@@ -157,6 +157,7 @@ else
 
     echo "Installing SPIC app..."
     pm install "$local_apk_path"
+    rm "$local_apk_path" >/dev/null 2>&1
 fi
 
 killall $spic >/dev/null 2>&1
