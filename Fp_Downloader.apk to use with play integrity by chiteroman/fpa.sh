@@ -92,7 +92,7 @@ echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
     pm uninstall "$apk" > /dev/null 2>&1
-    if ! pm list packages -d | grep "$apk" > /dev/null; then
+    if ! pm list packages -d | "$busybox_path" grep "$apk" > /dev/null; then
         if pm disable "$apk" > /dev/null 2>&1; then
             echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
         fi
@@ -142,9 +142,23 @@ for keyword in "${banned_names[@]}"; do
     fi
 done
 
-killall $spic >/dev/null 2>&1
-
 spic="com.henrikherzig.playintegritychecker"
+local_apk_path="/data/local/tmp/spic-v1.4.0.apk"
+apk_url="https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
+
+# Check if SPIC app is already installed
+if pm list packages | "$busybox_path" grep "$spic" ; then
+    echo "The SPIC app is already installed!"
+    echo ""
+else
+    echo "Downloading SPIC app..."
+    /system/bin/curl -L "$apk_url" -o "$local_apk_path" >/dev/null 2>&1
+
+    echo "Installing SPIC app..."
+    pm install "$local_apk_path"
+fi
+
+killall $spic >/dev/null 2>&1
 
 am start -n $spic/$spic.MainActivity >/dev/null 2>&1
 sleep 2
