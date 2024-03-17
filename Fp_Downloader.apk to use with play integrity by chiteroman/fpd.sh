@@ -163,4 +163,6 @@ rm /data/adb/modules/zygisksu/disable > /dev/null 2>/dev/null
 # Auto delete the script
 rm "$0" > /dev/null 2>/dev/null
 
-reboot 
+reboot >/dev/null 2>&1
+
+echo "The phone should have rebooted by itself. If you are reading this, reboot manually!"
