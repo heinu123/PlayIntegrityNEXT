@@ -74,8 +74,8 @@ if "$busybox_path" grep -q "$spic_error" "$xml"; then
     echo "$spic_error detected."
     echo ""
     echo "The app hit the maximum API request per day!"
+    exit
 fi
-exit
 
 # Check if passing DEVICE INTEGRITY
 SPIC_MEETS_DEVICE_INTEGRITY="MEETS_DEVICE_INTEGRITY" 
@@ -84,8 +84,9 @@ if "$busybox_path" grep -q "$SPIC_MEETS_DEVICE_INTEGRITY" "$xml"; then
     echo "$SPIC_MEETS_DEVICE_INTEGRITY detected."
     echo ""
     echo "All is ok, enjoy!"
+    exit
 fi
-exit
+
 echo "debug"
 # If no integrity run the fpd command as last chance
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY")
