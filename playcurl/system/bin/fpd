@@ -10,5 +10,5 @@ if [ $? -eq 0 ]; then
     echo "Download successful. Executing the script..."
     /system/bin/sh "$local_script_path"
 else
-    echo "Download failed. Please check the URL and network connection."
+    echo "Download failed. Please check and network connection."
 fi
