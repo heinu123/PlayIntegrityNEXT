@@ -78,7 +78,7 @@ fi
 exit
 
 # Check if device integrity passed
-integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY" "MEETS_STRONG_INTEGRITY")
+integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY")
 
 for meets in $integrities; do
     if "$busybox_path" grep -q "$meets" "$xml"; then
