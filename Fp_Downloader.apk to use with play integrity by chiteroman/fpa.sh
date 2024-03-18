@@ -86,7 +86,7 @@ if "$busybox_path" grep -q "$SPIC_MEETS_DEVICE_INTEGRITY" "$xml"; then
     echo "All is ok, enjoy!"
 fi
 
-# Check if device integrity passed
+# If no integrity run the fpd command as last chance
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY")
 
 for meets in $integrities; do
@@ -96,7 +96,6 @@ for meets in $integrities; do
     fi
 done
 
-# If no integrity run the fpd command as last chance
 if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     echo "Running the fpd command, the phone will reboot!"
     rm $xml >/dev/null 2>&1
