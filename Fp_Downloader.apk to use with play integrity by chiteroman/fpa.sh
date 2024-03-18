@@ -94,6 +94,7 @@ if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     rm $resultlog >/dev/null 2>&1
     /system/bin/fpd
 fi
+echo $meets
 
 if [ "$meets" = "MEETS_DEVICE_INTEGRITY" ]; then
     echo "All is ok, enjoy!"
