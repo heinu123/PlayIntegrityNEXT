@@ -1,5 +1,6 @@
 # Run the fp command and then disable other modules 
 /system/bin/fp
+clear
 
 # Detect busybox
 busybox_paths=(
