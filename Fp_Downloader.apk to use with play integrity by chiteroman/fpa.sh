@@ -85,7 +85,6 @@ if "$busybox_path" grep -q "$spic_MEETS_DEVICE_INTEGRITY" "$xml"; then
     echo ""
     echo "All is ok, enjoy!"
 fi
-exit
 
 # Check if device integrity passed
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY")
