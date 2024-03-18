@@ -1,6 +1,5 @@
 # Run the fp command and then check with SPIC
 /system/bin/fp
-clear
 
 # Detect busybox
 busybox_paths=(
