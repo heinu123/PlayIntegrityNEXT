@@ -93,6 +93,8 @@ if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     rm $xml >/dev/null 2>&1
     rm $resultlog >/dev/null 2>&1
     /system/bin/fpd
-else
-    echo "All is ok, enjoy"
+fi
+
+if [ "$meets" = "MEETS_DEVICE_INTEGRITY" ]; then
+    echo "All is ok, enjoy!"
 fi
