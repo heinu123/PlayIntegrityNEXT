@@ -77,17 +77,17 @@ if "$busybox_path" grep -q "$spic_error" "$xml"; then
 fi
 exit
 
-# Check if passing
-spic_MEETS_DEVICE_INTEGRITY="MEETS_DEVICE_INTEGRITY" 
-if "$busybox_path" grep -q "$spic_MEETS_DEVICE_INTEGRITY" "$xml"; then
+# Check if passing DEVICE INTEGRITY
+SPIC_MEETS_DEVICE_INTEGRITY="MEETS_DEVICE_INTEGRITY" 
+if "$busybox_path" grep -q "$SPIC_MEETS_DEVICE_INTEGRITY" "$xml"; then
     echo ""
-    echo "$spic_MEETS_DEVICE_INTEGRITY detected."
+    echo "$SPIC_MEETS_DEVICE_INTEGRITY detected."
     echo ""
     echo "All is ok, enjoy!"
 fi
 
 # Check if device integrity passed
-integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY")
+integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY")
 
 for meets in $integrities; do
     if "$busybox_path" grep -q "$meets" "$xml"; then
