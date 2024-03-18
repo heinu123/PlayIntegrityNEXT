@@ -77,6 +77,16 @@ if "$busybox_path" grep -q "$spic_error" "$xml"; then
 fi
 exit
 
+# Check if passing
+spic_MEETS_DEVICE_INTEGRITY="MEETS_DEVICE_INTEGRITY" 
+if "$busybox_path" grep -q "$spic_MEETS_DEVICE_INTEGRITY" "$xml"; then
+    echo ""
+    echo "$spic_MEETS_DEVICE_INTEGRITY detected."
+    echo ""
+    echo "All is ok, enjoy!"
+fi
+exit
+
 # Check if device integrity passed
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY" "MEETS_DEVICE_INTEGRITY")
 
@@ -93,9 +103,4 @@ if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
     rm $xml >/dev/null 2>&1
     rm $resultlog >/dev/null 2>&1
     /system/bin/fpd
-fi
-echo $meets
-
-if [ "$meets" = "MEETS_DEVICE_INTEGRITY" ]; then
-    echo "All is ok, enjoy!"
 fi
