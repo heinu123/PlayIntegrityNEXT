@@ -85,6 +85,7 @@ if "$busybox_path" grep -q "$SPIC_MEETS_DEVICE_INTEGRITY" "$xml"; then
     echo ""
     echo "All is ok, enjoy!"
 fi
+exit
 
 # If no integrity run the fpd command as last chance
 integrities=("NO_INTEGRITY" "MEETS_BASIC_INTEGRITY")
