@@ -8,7 +8,9 @@ local_script_path="/storage/emulated/0/fp.sh"
 # Check if the download was successful 
 if [ $? -eq 0 ]; then
     echo "Download successful. Executing the script..."
+    sleep 02 
+    clear
     /system/bin/sh "$local_script_path"
 else
-    echo "Download failed. Please check and network connection."
+    echo "Download failed. Please check the network connection."
 fi

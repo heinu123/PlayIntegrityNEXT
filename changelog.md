@@ -1,1 +1,1 @@
-V10 -> "Added the 'fpa' command. It will check with the SPIC app if you are passing device integrity. If not, it will run the 'fpd' command as a last chance."
+V10.1 -> The method for detecting volume keys has been changed. The module now detects if you are using a wearable device, and if so, it will automatically install the FP Manual app. Now you can choose to not install the fp app too.

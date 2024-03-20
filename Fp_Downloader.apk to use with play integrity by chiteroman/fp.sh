@@ -14,6 +14,14 @@ for path in "${busybox_paths[@]}"; do
     fi
 done
 
+# Check if the user is root
+current_user=$("$busybox_path" whoami)
+
+if [ "$current_user" != "root" ]; then
+    echo "You are not the root user. This script requires root privileges."
+    exit 1
+fi
+
 # Check if the setup is correct
 if "$busybox_path" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop; then
     echo
@@ -30,14 +38,6 @@ if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; the
     rm -rf /data/adb/modules/playcurl
     echo "Wrong setup! Download playcurl from https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/playcurl"
     exit
-fi
-
-# Check if the user is root
-current_user=$("$busybox_path" whoami)
-
-if [ "$current_user" != "root" ]; then
-    echo "You are not the root user. This script requires root privileges."
-    exit 1
 fi
 
 # Check for zygisk
@@ -86,8 +86,8 @@ for file_path in "${file_paths[@]}"; do
 done
 echo
 
-# Disable problematic packages, miui eu, EvoX, lineage, PixelOS, autopif
-apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay")
+# Disable problematic packages, miui eu, EvoX, lineage, PixelOS, Eliterom
+apk_names=("eu.xiaomi.module.inject" "com.goolag.pif" "com.lineageos.pif" "co.aospa.android.certifiedprops.overlay" "com.elitedevelopment.module")
 echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
