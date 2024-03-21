@@ -67,9 +67,6 @@ echo ""
 # First menu
 fp_mode
 
-timeout=15  
-start_time=$(date +%s)
-
 while true; do
 
     # Check if Volume Up pressed
@@ -84,15 +81,11 @@ while true; do
         break  
     fi
 
-    # Check if timeout reached
-    current_time=$(date +%s)
-    elapsed_time=$((current_time - start_time))
-    if [ $elapsed_time -ge $timeout ]; then
-        echo "No key pressed within $timeout seconds."
-        echo "Using default profile."
-        rm -rf $MODPATH/system/app/com.fp.downloader.auto
-        exit 0
-    fi
+    # Sleep for 15 seconds
+    echo "No key pressed within $timeout seconds."
+    echo "Using default profile."
+    rm -rf $MODPATH/system/app/com.fp.downloader.auto
+    exit 0
 
 done
 
