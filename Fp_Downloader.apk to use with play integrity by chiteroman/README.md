@@ -16,7 +16,20 @@ https://github.com/daboynb/PlayIntegrityNEXT/assets/106079917/53180bbd-c9b7-49e2
 • Use the SPIC app to verify Play Integrity or the Play Store Checker.
 
 Note: If you've chosen the FP Manual app or no app, when the FP is banned, you will need to open it or use the Termux command "fp".
-    
+
+# Binaries
+
+fp -> Downloads a working FP and fixes errors in the setup.
+fpd -> Runs the 'fp' command and then disables all other modules to test incompatibility.
+fpa -> Runs the 'fp' command and then checks for device integrity; if not met, it runs the 'fpd' command.
+fpt -> Checks multiple JSON files.
+
+# Instructions for fpt
+
+- Put all your JSON files into /storage/emulated/0/pif_to_test.
+- Open Termux.
+- Type 'su' and then 'fpt'. All the good JSON files will be moved to /storage/emulated/0/pif_ok.
+
 # Support
 Telegram :
 

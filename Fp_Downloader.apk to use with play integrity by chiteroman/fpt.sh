@@ -1,5 +1,10 @@
 #!/bin/bash
 
+echo "Put all your JSON files into /storage/emulated/0/pif_to_test."
+echo "The good JSON files will be moved to /storage/emulated/0/pif_ok."
+
+sleep 04
+
 # Function to detect busybox
 detect_busybox() {
     busybox_paths=(
