@@ -112,7 +112,6 @@ main() {
             echo ""
             echo "Pif.json is ok, moving to $OUTPUT_DIR"
             mv "$json_file" "$OUTPUT_DIR/"
-            exit
         fi
 
         # If no integrity
