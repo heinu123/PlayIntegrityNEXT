@@ -53,15 +53,9 @@ app_choice (){
 echo ""
 echo "What do I need to select?"
 echo ""
-echo ""
 echo "This module puts the fp* binaries in /system/bin."
 echo "To avoid having to use Termux every time we want to run "
 echo "the command, I decided to create a Tasker app too."
-echo ""
-echo ""
-echo "If no vol keys are deceted for 15 seconds"
-echo "the default profile will be used"
-echo ""
 echo ""
 
 # First menu
@@ -80,12 +74,6 @@ while true; do
     if key_event_volume_down; then
         break  
     fi
-
-    # Sleep for 15 seconds
-    echo "No key pressed within $timeout seconds."
-    echo "Using default profile."
-    rm -rf $MODPATH/system/app/com.fp.downloader.auto
-    exit 0
 
 done
 
@@ -109,5 +97,4 @@ while true; do
     fi
 
 done
-
 ##########################################################################################

@@ -1,1 +1,1 @@
-V10.2 -> Added the fpt command to test multiple pif.json. Added a timer on customize.sh, If no vol keys are deceted for 15 seconds the default profile will be used.
+V10.2 -> Added the fpt command to test multiple pif.json.
