@@ -1,1 +1,1 @@
-V10.1 -> The method for detecting volume keys has been changed. The module now detects if you are using a wearable device, and if so, it will automatically install the FP Manual app. Now you can choose to not install the fp app too.
+V10.2 -> Added the fpt command to test multiple pif.json. Added a timer on customize.sh, If no vol keys are deceted for 15 seconds the default profile will be used.

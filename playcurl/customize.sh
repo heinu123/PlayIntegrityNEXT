@@ -2,6 +2,7 @@
 set_perm $MODPATH/system/bin/fp root root 0777
 set_perm $MODPATH/system/bin/fpd root root 0777
 set_perm $MODPATH/system/bin/fpa root root 0777
+set_perm $MODPATH/system/bin/fpt root root 0777
 mv -f $MODPATH/system/bin/$ABI/curl $MODPATH/system/bin
 set_perm $MODPATH/system/bin/curl root root 777
 
@@ -26,14 +27,6 @@ key_event_volume_down() {
     /system/bin/getevent -lqc 1 | grep -q "KEY_VOLUMEDOWN"
 }
 
-echo ""
-echo "What do I need to select?"
-echo ""
-echo "This module puts the fp* binaries in /system/bin."
-echo "To avoid having to use Termux every time we want to run "
-echo "the command, I decided to create a Tasker app too."
-echo ""
-
 fp_mode (){
   echo ""
   echo "- Select an option: "
@@ -57,9 +50,25 @@ app_choice (){
   echo ""
 }
 
+echo ""
+echo "What do I need to select?"
+echo ""
+echo ""
+echo "This module puts the fp* binaries in /system/bin."
+echo "To avoid having to use Termux every time we want to run "
+echo "the command, I decided to create a Tasker app too."
+echo ""
+echo ""
+echo "If no vol keys are deceted for 15 seconds"
+echo "the default profile will be used"
+echo ""
+echo ""
 
 # First menu
 fp_mode
+
+timeout=15  
+start_time=$(date +%s)
 
 while true; do
 
@@ -73,6 +82,16 @@ while true; do
     # Check if Volume Down pressed
     if key_event_volume_down; then
         break  
+    fi
+
+    # Check if timeout reached
+    current_time=$(date +%s)
+    elapsed_time=$((current_time - start_time))
+    if [ $elapsed_time -ge $timeout ]; then
+        echo "No key pressed within $timeout seconds."
+        echo "Using default profile."
+        rm -rf $MODPATH/system/app/com.fp.downloader.auto
+        exit 0
     fi
 
 done
@@ -97,4 +116,5 @@ while true; do
     fi
 
 done
+
 ##########################################################################################
