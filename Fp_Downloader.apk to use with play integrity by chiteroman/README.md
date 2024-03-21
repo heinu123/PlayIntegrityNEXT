@@ -19,16 +19,16 @@ Note: If you've chosen the FP Manual app or no app, when the FP is banned, you w
 
 # Binaries
 
-fp -> Downloads a working FP and fixes errors in the setup.
-fpd -> Runs the 'fp' command and then disables all other modules to test incompatibility.
-fpa -> Runs the 'fp' command and then checks for device integrity; if not met, it runs the 'fpd' command.
-fpt -> Checks multiple JSON files.
+        - fp -> Downloads a working FP and fixes errors in the setup.
+        - fpd -> Runs the 'fp' command and then disables all other modules to test incompatibility.
+        - fpa -> Runs the 'fp' command and then checks for device integrity; if not met, it runs the 'fpd' command.
+        - fpt -> Checks multiple JSON files.
 
 # Instructions for fpt
 
-- Put all your JSON files into /storage/emulated/0/pif_to_test.
-- Open Termux.
-- Type 'su' and then 'fpt'. All the good JSON files will be moved to /storage/emulated/0/pif_ok.
+        - Put all your JSON files into /storage/emulated/0/pif_to_test.
+        - Open Termux.
+        - Type 'su' and then 'fpt'. All the good JSON files will be moved to /storage/emulated/0/pif_ok.
 
 # Support
 Telegram :
