@@ -84,11 +84,11 @@ main() {
 
         # Use input to start a check
         input keyevent KEYCODE_DPAD_UP
-        sleep 1
+        sleep 3
         input keyevent KEYCODE_DPAD_UP
-        sleep 1
+        sleep 3
         input keyevent KEYCODE_ENTER
-        sleep 10
+        sleep 7
 
         # Ensure output directory exists
         mkdir -p "$OUTPUT_DIR"
