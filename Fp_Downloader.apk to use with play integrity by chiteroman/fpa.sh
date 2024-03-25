@@ -47,15 +47,13 @@ sleep 3
 
 # Launch the app
 am start -n $spic/$spic.MainActivity >/dev/null 2>&1
-sleep 3
+sleep 4
 
 # Use input to start a check
 input keyevent KEYCODE_DPAD_UP
-sleep 1
 input keyevent KEYCODE_DPAD_UP
-sleep 1
 input keyevent KEYCODE_ENTER
-sleep 10
+sleep 7
 
 # Variables for log
 STORAGE_DIR="/storage/emulated/0"
