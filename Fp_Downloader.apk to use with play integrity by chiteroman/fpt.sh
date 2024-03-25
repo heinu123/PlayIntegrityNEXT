@@ -80,13 +80,11 @@ main() {
         # Launch the app
         cls_gms
         am start -n $spic/$spic.MainActivity >/dev/null 2>&1
-        sleep 3
+        sleep 4
 
         # Use input to start a check
         input keyevent KEYCODE_DPAD_UP
-        sleep 3
         input keyevent KEYCODE_DPAD_UP
-        sleep 3
         input keyevent KEYCODE_ENTER
         sleep 7
 
