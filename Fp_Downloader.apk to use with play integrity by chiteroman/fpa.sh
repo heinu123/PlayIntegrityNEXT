@@ -51,7 +51,11 @@ sleep 4
 
 # Use input to start a check
 input keyevent KEYCODE_DPAD_UP
+sleep 1
 input keyevent KEYCODE_DPAD_UP
+sleep 1
+input keyevent KEYCODE_DPAD_UP
+sleep 1
 input keyevent KEYCODE_ENTER
 sleep 7
 
