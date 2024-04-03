@@ -40,6 +40,15 @@ if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; the
     exit
 fi
 
+# Check for pif
+if [ -d "/data/adb/modules/playintegrityfix" ]; then
+    :
+else
+    echo You need Play Integrity Fix module!
+    rm "$0"
+    exit 1
+fi
+
 # Check for zygisk
 if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
