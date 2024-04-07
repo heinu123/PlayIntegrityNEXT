@@ -42,12 +42,11 @@ fi
 
 # Check for kdrag0n/safetynet-fix
 if [ -d "/data/adb/modules/safetynet-fix" ]; then
-    :
-else
     echo "The safetynet-fix module is incompatible with pif, remove it and reboot the phone to proceed"
     rm "$0"
     exit 1
-fi
+else
+
 
 # Check for pif
 if [ -d "/data/adb/modules/playintegrityfix" ]; then
