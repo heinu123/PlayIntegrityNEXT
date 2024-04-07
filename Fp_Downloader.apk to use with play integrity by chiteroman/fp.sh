@@ -49,8 +49,6 @@ fi
 
 # Check for pif
 if [ -d "/data/adb/modules/playintegrityfix" ]; then
-    :
-else
     echo "You need Play Integrity Fix module!"
     rm "$0"
     exit 1
