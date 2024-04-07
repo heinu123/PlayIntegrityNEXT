@@ -45,8 +45,7 @@ if [ -d "/data/adb/modules/safetynet-fix" ]; then
     echo "The safetynet-fix module is incompatible with pif, remove it and reboot the phone to proceed"
     rm "$0"
     exit 1
-else
-
+fi
 
 # Check for pif
 if [ -d "/data/adb/modules/playintegrityfix" ]; then
