@@ -40,11 +40,20 @@ if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; the
     exit
 fi
 
+# Check for kdrag0n/safetynet-fix
+if [ -d "/data/adb/modules/safetynet-fix" ]; then
+    :
+else
+    echo "The safetynet-fix module is incompatible with pif, remove it and reboot the phone to proceed"
+    rm "$0"
+    exit 1
+fi
+
 # Check for pif
 if [ -d "/data/adb/modules/playintegrityfix" ]; then
     :
 else
-    echo You need Play Integrity Fix module!
+    echo "You need Play Integrity Fix module!"
     rm "$0"
     exit 1
 fi
@@ -54,7 +63,7 @@ if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
     :
   else
-    echo You need zygisk!
+    echo "You need zygisk!"
     rm "$0"
     exit 1
   fi
@@ -64,7 +73,7 @@ if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
     :
   else
-    echo You need zygisk!
+    echo "You need zygisk!"
     rm "$0"
     exit 1
   fi
