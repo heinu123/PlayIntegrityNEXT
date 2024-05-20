@@ -1,43 +1,14 @@
-# Detect busybox
-busybox_paths=(
-    "/data/adb/magisk/busybox"
-    "/data/adb/ksu/bin/busybox"
-    "/data/adb/ap/bin/busybox"
-)
+#!/system/bin/sh
 
+# Detect busybox
 busybox_path=""
 
-for path in "${busybox_paths[@]}"; do
-    if [ -f "$path" ]; then
-        busybox_path="$path"
-        break
-    fi
-done
-
-# Check if the user is root
-current_user=$("$busybox_path" whoami)
-
-if [ "$current_user" != "root" ]; then
-    echo "You are not the root user. This script requires root privileges."
-    exit 1
-fi
-
-# Check if the setup is correct
-if "$busybox_path" grep -q 'NEXT' /data/adb/modules/playintegrityfix/module.prop; then
-    echo
-    echo "Wrong setup! Remove play integrity fix next and download the official chiteroman module! Playcurl is meant to be used alongside pif official!"
-    exit
-fi
-
-if pm list packages | "$busybox_path" grep "com.autopif.x1337cn" > /dev/null; then
-    pm uninstall "com.autopif.x1337cn" > /dev/null 2>&1
-fi
-
-if "$busybox_path" grep -q 'x1337cn' /data/adb/modules/playcurl/module.prop; then
-    echo
-    rm -rf /data/adb/modules/playcurl
-    echo "Wrong setup! Download playcurl from https://github.com/daboynb/PlayIntegrityNEXT/releases/tag/playcurl"
-    exit
+if [ -f "/data/adb/magisk/busybox" ]; then
+    busybox_path="/data/adb/magisk/busybox"
+elif [ -f "/data/adb/ksu/bin/busybox" ]; then
+    busybox_path="/data/adb/ksu/bin/busybox"
+elif [ -f "/data/adb/ap/bin/busybox" ]; then
+    busybox_path="/data/adb/ap/bin/busybox"
 fi
 
 # Check for kdrag0n/safetynet-fix
@@ -47,7 +18,14 @@ if [ -d "/data/adb/modules/safetynet-fix" ]; then
     exit 1
 fi
 
-# Check for pif
+# Check for MagiskHidePropsConfig
+if [ -d "/data/adb/modules/MagiskHidePropsConf" ]; then
+    echo "The MagiskHidePropsConfig module is incompatible with pif, remove it and reboot the phone to proceed"
+    rm "$0"
+    exit 1
+fi
+
+# Check for playintegrityfix
 if [ -d "/data/adb/modules/playintegrityfix" ]; then
     :
 else
@@ -56,7 +34,7 @@ else
     exit 1
 fi
 
-# Check for zygisk
+# Check for zygisk if the user is using ksu
 if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
     :
@@ -67,6 +45,7 @@ if [ "$busybox_path" = "/data/adb/ap/bin/busybox" ]; then
   fi
 fi
 
+# Check for zygisk if the user is using apatch
 if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
   if [ -d "/data/adb/modules/zygisksu" ]; then
     :
@@ -77,13 +56,11 @@ if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
   fi
 fi
 
-# Remove from denylist google play services, google service framework
-magisk_package_names=("com.google.android.gms" "com.google.android.gsf" )
-
+# Remove from denylist google play services
 if [ "$busybox_path" = "/data/adb/magisk/busybox" ]; then
-    for magisk_package in "${magisk_package_names[@]}"; do
-        magisk --denylist rm "${magisk_package}" > /dev/null 2>/dev/null
-    done
+        if magisk --denylist status; then
+        magisk --denylist rm com.google.android.gms
+    fi
 fi
 echo "" 
 
@@ -162,6 +139,7 @@ echo ""
 echo "Remember, wallet can take up to 24 hrs to work again!"
 echo ""
 echo "If you receive the device is not certified message on the Play Store and you are passing device integrity, go to Settings, then Apps, find the Play Store, and tap on Uninstall Updates."
+echo ""
 
 # Auto delete the script
 rm "$0" > /dev/null 2>/dev/null

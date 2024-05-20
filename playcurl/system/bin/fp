@@ -1,3 +1,4 @@
+#!/system/bin/sh
 script_url="https://raw.githubusercontent.com/daboynb/PlayIntegrityNEXT/main/Fp_Downloader.apk%20to%20use%20with%20play%20integrity%20by%20chiteroman/fp.sh"
 
 local_script_path="/storage/emulated/0/fp.sh"
@@ -13,4 +14,6 @@ if [ $? -eq 0 ]; then
     /system/bin/sh "$local_script_path"
 else
     echo "Download failed. Please check the network connection."
+    # Download it again without suppressing the output to catch the error
+    /system/bin/curl -L "$script_url" -o "$local_script_path"
 fi

@@ -1,25 +1,20 @@
-#!/bin/bash
+#!/system/bin/sh
 
 echo "Put all your JSON files into /storage/emulated/0/pif_to_test."
 echo "The good JSON files will be moved to /storage/emulated/0/pif_ok."
 
 sleep 04
 
-# Function to detect busybox
-detect_busybox() {
-    busybox_paths=(
-        "/data/adb/magisk/busybox"
-        "/data/adb/ksu/bin/busybox"
-        "/data/adb/ap/bin/busybox"
-    )
+# Detect busybox
+busybox_path=""
 
-    for path in "${busybox_paths[@]}"; do
-        if [ -f "$path" ]; then
-            busybox_path="$path"
-            break
-        fi
-    done
-}
+if [ -f "/data/adb/magisk/busybox" ]; then
+    busybox_path="/data/adb/magisk/busybox"
+elif [ -f "/data/adb/ksu/bin/busybox" ]; then
+    busybox_path="/data/adb/ksu/bin/busybox"
+elif [ -f "/data/adb/ap/bin/busybox" ]; then
+    busybox_path="/data/adb/ap/bin/busybox"
+fi
 
 # Function to kill gms processes
 cls_gms(){
@@ -34,8 +29,6 @@ cls_gms(){
 
 # Main function
 main() {
-
-    detect_busybox
 
     # Variables for the apk
     spic="com.henrikherzig.playintegritychecker"

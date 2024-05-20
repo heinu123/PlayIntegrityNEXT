@@ -1,21 +1,18 @@
+#!/system/bin/sh
+
 # Run the fp command and then disable other modules 
 /system/bin/fp
 
 # Detect busybox
-busybox_paths=(
-    "/data/adb/magisk/busybox"
-    "/data/adb/ksu/bin/busybox"
-    "/data/adb/ap/bin/busybox"
-)
-
 busybox_path=""
 
-for path in "${busybox_paths[@]}"; do
-    if [ -f "$path" ]; then
-        busybox_path="$path"
-        break
-    fi
-done
+if [ -f "/data/adb/magisk/busybox" ]; then
+    busybox_path="/data/adb/magisk/busybox"
+elif [ -f "/data/adb/ksu/bin/busybox" ]; then
+    busybox_path="/data/adb/ksu/bin/busybox"
+elif [ -f "/data/adb/ap/bin/busybox" ]; then
+    busybox_path="/data/adb/ap/bin/busybox"
+fi
 
 # Disable other modules for testing incompatibility
 list="$("$busybox_path" find /data/adb/modules/* -prune -type d)"
