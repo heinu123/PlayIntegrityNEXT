@@ -12,6 +12,8 @@ If you wanna help me
 
 • When finished, use the SPIC app to verify Play Integrity or the Play Store Checker.
 
+The module checks automatically if the fingerprint has been banned every 30 minutes. You can set your preferred time in seconds inside "/data/adb/modules/playcurl/seconds.txt".
+
 # Binaries
 
         - fp -> Downloads a working FP and fixes errors in the setup.
