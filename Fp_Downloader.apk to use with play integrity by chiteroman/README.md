@@ -14,6 +14,8 @@ If you wanna help me
 
 The module checks automatically if the fingerprint has been banned every 30 minutes. You can set your preferred time in seconds inside "/data/adb/modules/playcurl/seconds.txt".
 
+If you don't want the auto-update feature, you can simply delete the file "/data/adb/modules/playcurl/service.sh".
+
 # Binaries
 
         - fp -> Downloads a working FP and fixes errors in the setup.
