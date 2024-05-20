@@ -23,9 +23,6 @@ check_boot_completed() {
     fi
 }
 
-# Get date and time
-current_date_time=$(date +"%Y-%m-%d %H:%M:%S")
-
 # Check if internet is working
 check_network_reachable() {
     count=0
@@ -53,11 +50,24 @@ check_pif_diff() {
 
     # Check the diff
     if "$busybox_path" diff /data/adb/remote_pif.json "$pif_file"; then
+        
+        # Get date and time
+        current_date_time=$(date +"%Y-%m-%d %H:%M:%S")
         echo "$current_date_time" > /storage/emulated/0/check_fp.log
+
+        # Get check interval
+        echo "Time interval : $time_interval" >> /storage/emulated/0/check_fp.log
+        
         echo "The fp is still the same as the one on github." >> /storage/emulated/0/check_fp.log
         echo "Please note: after a ban, the new fp will be pulled after 1 hour." >> /storage/emulated/0/check_fp.log
     else
+        # Get date and time
+        current_date_time=$(date +"%Y-%m-%d %H:%M:%S")
         echo "$current_date_time" > /storage/emulated/0/run_fp.log
+
+        # Get check interval
+        echo "Time interval : $time_interval" >> /storage/emulated/0/run_fp.log
+
         /system/bin/fp >> /storage/emulated/0/run_fp.log
     fi
 
@@ -72,10 +82,14 @@ until check_boot_completed; do
     sleep 05
 done
 
+# Check interval
+filepath="/data/adb/modules/playcurl/seconds.txt"
+time_interval=$(cat "$filepath")
+
 # Check if the fp got banned every 30 minutes 
 while true; do
     if check_network_reachable; then
         check_pif_diff
     fi
-    sleep 1800 
+    sleep "$time_interval" 
 done

@@ -1,1 +1,2 @@
-V10.3 -> Removed the fp app, now the module will do all automatically!
+V10.4 -> Fixed a bug regarding the timestamp of the log file.
+         Added the option to specify the time between each check.
