@@ -59,7 +59,7 @@ fi
 # Remove from denylist google play services
 if [ "$busybox_path" = "/data/adb/magisk/busybox" ]; then
         if magisk --denylist status; then
-        magisk --denylist rm com.google.android.gms > /dev/null 2>&1
+        magisk --denylist rm com.google.android.gms
     fi
 fi
 echo "" 
@@ -74,7 +74,7 @@ file_paths=(
 
 for file_path in "${file_paths[@]}"; do
     if [ -f "$file_path" ]; then
-        rm -f "$file_path" > /dev/null 2>&1
+        rm -f "$file_path" > /dev/null
     fi
 done
 echo
@@ -85,7 +85,7 @@ echo "[+] Check if inject apks are present"
 
 for apk in "${apk_names[@]}"; do
     pm uninstall "$apk" > /dev/null 2>&1
-    if ! pm list packages -d | "$busybox_path" grep "$apk" > /dev/null 2>&1; then
+    if ! pm list packages -d | "$busybox_path" grep "$apk" > /dev/null; then
         if pm disable "$apk" > /dev/null 2>&1; then
             echo "[+] The ${apk} apk is now disabled. YOU NEED TO REBOOT OR YOU WON'T BE ABLE TO PASS DEVICE INTEGRITY!"
         fi
@@ -108,7 +108,7 @@ package_names=("com.google.android.gms" "com.google.android.gms.unstable" "com.g
 echo "[+] Killing some apps"
 
 for package in "${package_names[@]}"; do
-    pkill -f "${package}" > /dev/null 2>&1
+    pkill -f "${package}" > /dev/null
 done
 echo
 
