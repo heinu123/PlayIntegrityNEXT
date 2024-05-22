@@ -56,14 +56,6 @@ if [ "$busybox_path" = "/data/adb/ksu/bin/busybox" ]; then
   fi
 fi
 
-# Remove from denylist google play services
-if [ "$busybox_path" = "/data/adb/magisk/busybox" ]; then
-        if magisk --denylist status; then
-        magisk --denylist rm com.google.android.gms
-    fi
-fi
-echo "" 
-
 # Delete outdated pif.json
 echo "[+] Deleting old pif.json"
 file_paths=(
