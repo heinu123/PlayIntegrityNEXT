@@ -8,13 +8,14 @@ sleep 04
 # Detect busybox
 busybox_path=""
 
-if [ -f "/data/adb/magisk/busybox" ]; then
-    busybox_path="/data/adb/magisk/busybox"
-elif [ -f "/data/adb/ksu/bin/busybox" ]; then
-    busybox_path="/data/adb/ksu/bin/busybox"
-elif [ -f "/data/adb/ap/bin/busybox" ]; then
-    busybox_path="/data/adb/ap/bin/busybox"
-fi
+# Find busybox
+for i in $(find /data/adb -name busybox -type f -size +1M)
+do
+    if [ "$($busybox | grep 'BusyBox')" ];then
+        busybox_path="$busybox"
+        break
+    fi
+done
 
 # Function to kill gms processes
 cls_gms(){
