@@ -34,8 +34,12 @@ main() {
     # Variables for the apk
     spic="com.henrikherzig.playintegritychecker"
     local_apk_path="/data/local/tmp/spic-v1.4.0.apk"
-    apk_url="https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
-
+    
+    if /system/bin/curl -sL ipinfo.io | grep 'CN' > /dev/null 2>&1; then
+        apk_url="https://mirror.ghproxy.com/https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
+    else
+        apk_url="https://github.com/herzhenr/spic-android/releases/download/v1.4.0/spic-v1.4.0.apk"
+    fi
     # Check if SPIC app is already installed
     if pm list packages | "$busybox_path" grep "$spic" >/dev/null 2>&1; then
         echo ""
