@@ -27,7 +27,7 @@ check_boot_completed() {
 check_network_reachable() {
     count=0
     while [ $count -lt 3 ]; do
-        if ping -c1 www.google.com > /dev/null 2>&1; then
+        if ping -c1 www.gstatic.com > /dev/null 2>&1; then
             count=$((count + 1))
         else
             count=0
