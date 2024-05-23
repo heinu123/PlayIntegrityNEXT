@@ -126,7 +126,8 @@ main() {
 
         if [ "$meets" = "NO_INTEGRITY" ] || [ "$meets" = "MEETS_BASIC_INTEGRITY" ]; then
             echo "Pif.json is not good!"
-            rm "$xml" >/dev/null 2>&1
+            rm "$xml" 
+            rm "$json_file"
         fi
     done
 }
