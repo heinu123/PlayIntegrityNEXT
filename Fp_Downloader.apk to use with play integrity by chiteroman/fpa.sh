@@ -7,7 +7,7 @@
 busybox_path=""
 
 # Find busybox
-for i in $(find /data/adb -name busybox -type f -size +1M)
+for busybox in $(find /data/adb -name busybox -type f -size +1M)
 do
     if [ "$($busybox | grep 'BusyBox')" ];then
         busybox_path="$busybox"
